@@ -5,13 +5,16 @@ import util.Sha256Hasher;
 
 import java.security.KeyPair;
 import java.security.PublicKey;
+import java.security.Signature;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.logging.Logger;
 
 public class Wallet
 {
+    private Logger logger = Logger.getLogger(Wallet.class.getName());
+
     private KeyPair             keyPair;
-    private PublicKey           pub;
     private String              address;
     private Map<Asset, Integer> assets;
 
@@ -23,25 +26,38 @@ public class Wallet
     public Wallet(KeyPair keyPair)
     {
         this.keyPair = keyPair;
-        this.pub = keyPair.getPublic();
-        this.address = Sha256Hasher.hash(new String(pub.getEncoded()));
+        this.address = Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
         this.assets = new HashMap<>();
         assets.put(Asset.ETH, 32);  // adding initial assets for demo purposes
     }
 
-    public KeyPair getKeyPair()
+    public byte[] sign(TxProposal txProp)
     {
-        return keyPair;
+        try
+        {
+            // specifies sig algo (DSA) using the digest algo (SHA-1)
+            Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
+            dsa.initSign(keyPair.getPrivate());
+            dsa.update(txProp.stringify().getBytes()); // supplies tx data to the Sig object
+            return dsa.sign();
+
+        } catch (Exception e)
+        {
+            logger.warning("Tx could not be signed.");
+            e.printStackTrace();
+        }
+        return null;
     }
 
+    //
     public PublicKey getPub()
     {
-        return pub;
+        return keyPair.getPublic();
     }
 
     public String getAddress()
     {
-        return address;
+        return Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
     }
 
     public Map<Asset, Integer> getAssets()

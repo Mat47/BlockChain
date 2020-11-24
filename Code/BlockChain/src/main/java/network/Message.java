@@ -3,12 +3,14 @@ package network;
 import app.Node;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import util.JsonMapper;
+import util.SigKey;
 
 public class Message<T>
 {
     private MessageType msgType;
     private Node        sender;
-    private T payload;
+    private T           payload;
+    private SigKey      sigKey;
 
     public Message()
     {
@@ -20,6 +22,21 @@ public class Message<T>
         this.msgType = msgType;
         this.sender = sender;
         this.payload = payload;
+        this.sigKey = null;
+    }
+
+    public Message(MessageType msgType, Node sender, T payload, SigKey sigKey)
+    {
+        this.msgType = msgType;
+        this.sender = sender;
+        this.payload = payload;
+        this.sigKey = sigKey;
+    }
+
+    public String stringify() throws JsonProcessingException
+    {
+        JsonMapper mapper = new JsonMapper(this);
+        return mapper.stringify();
     }
 
     public byte[] serialize() throws JsonProcessingException
@@ -35,6 +52,7 @@ public class Message<T>
                 "msgType=" + msgType +
                 ", sender=" + sender +
                 ", payload=" + payload +
+                ", sigKey=" + sigKey +
                 '}';
     }
 
@@ -54,4 +72,8 @@ public class Message<T>
         return payload;
     }
 
+    public SigKey getSigKey()
+    {
+        return sigKey;
+    }
 }

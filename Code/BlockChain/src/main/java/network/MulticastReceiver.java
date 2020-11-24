@@ -1,6 +1,10 @@
 package network;
 
+import app.Controller;
 import app.Node;
+import app.TxProposal;
+import ledger.SmartContract;
+import ledger.Transaction;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
@@ -51,7 +55,12 @@ public class MulticastReceiver extends Thread
                         {
                             PortSender.respondHandshake(message.getSender().getPort(), node);
                             PeerInfo.peers.add(message.getSender());
+                            // adds address to chain accounts
+                            Controller.worldState.getAccounts().put(message.getSender().getAddress(), 100.);
                         }
+                        break;
+
+                    case ChainSyncRequest:
                         break;
                 }
             }

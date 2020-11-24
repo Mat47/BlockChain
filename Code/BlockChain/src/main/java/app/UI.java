@@ -4,8 +4,8 @@ public class UI
 {
     public static void display()
     {
-        System.out.println("-----------------------");
-        System.out.println("Select and press Enter");
+//        System.out.println("-----------------------");
+//        System.out.println("Select and press Enter");
         System.out.println("-----------------------");
         System.out.println("[0] quit");
         System.out.println("[1] show peer info");

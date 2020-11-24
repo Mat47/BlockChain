@@ -10,6 +10,7 @@ public enum MessageType
 
     TxProposal,
     TxEndorsement,
+    TxSubmission,
 
     NewBlock
 }
