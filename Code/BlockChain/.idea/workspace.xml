@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:origin/master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e11bc48c-4ee2-4e8a-90e7-67112241ef53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/ledger/MerkleTree.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/ledger/MerkleTreeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/util/JsonMapperTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accessPermission/CertificateAuthority.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accessPermission/CertificateAuthority.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/TxProposal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/TxProposal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/BlockHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/BlockHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Blockchain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Explorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Explorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/SmartContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/SmartContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/WorldState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/WorldState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/Message.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/Message.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/MulticastReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MulticastReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/MulticastSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MulticastSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PacketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PacketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PeerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PeerInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PortReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PortReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PortSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PortSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Sha256Hasher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Sha256Hasher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/SigKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/SigKey.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="$APPLICATION_HOME_DIR$/plugins/maven/lib/maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1khYNN8vsjoMUCXdoiQhca15HgV" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="util" />
+      <recent name="ledger" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="ledger" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="BlockChain" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonMapperTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlockChain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="util" />
+      <option name="MAIN_CLASS_NAME" value="util.JsonMapperTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JsonMapperTest.deserializeList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlockChain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="util" />
+      <option name="MAIN_CLASS_NAME" value="util.JsonMapperTest" />
+      <option name="METHOD_NAME" value="deserializeList" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MerkleTreeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="BlockChain" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="util.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="ledger" />
+      <option name="MAIN_CLASS_NAME" value="ledger.MerkleTreeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.JsonMapperTest" />
+        <item itemvalue="JUnit.JsonMapperTest.deserializeList" />
+        <item itemvalue="JUnit.MerkleTreeTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e11bc48c-4ee2-4e8a-90e7-67112241ef53" name="Default Changelist" comment="" />
+      <created>1606154249788</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1606154249788</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Setup and P2PDiscovery">
+      <created>1606179831571</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1606179831571</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Account-based blockchain model (WorldState)&#10;Endorsement architecture">
+      <created>1606262029347</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1606262029347</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Setup and P2PDiscovery" />
+    <MESSAGE value="Account-based blockchain model (WorldState)&#10;Endorsement architecture" />
+    <option name="LAST_COMMIT_MESSAGE" value="Account-based blockchain model (WorldState)&#10;Endorsement architecture" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="3265" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1606156743318">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3265" y="390" key="#com.intellij.execution.impl.EditConfigurationsDialog/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606156743318" />
+    <state x="3615" y="436" width="565" height="592" key="#com.intellij.ide.util.MemberChooser" timestamp="1606589782899">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3615" y="436" width="565" height="592" key="#com.intellij.ide.util.MemberChooser/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606589782899" />
+    <state x="3490" y="469" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1606575220744">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3490" y="469" width="624" height="526" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606575220744" />
+    <state x="3426" y="142" width="742" height="1182" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1606164052467">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3426" y="142" width="742" height="1182" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606164052467" />
+    <state x="3540" y="481" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606161495267">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3540" y="481" width="524" height="502" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606161495267" />
+    <state width="2449" height="625" key="GridCell.Tab.0.bottom" timestamp="1606593007056">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="625" key="GridCell.Tab.0.bottom/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606593007056" />
+    <state width="2449" height="625" key="GridCell.Tab.0.center" timestamp="1606593007056">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="625" key="GridCell.Tab.0.center/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606593007056" />
+    <state width="2449" height="625" key="GridCell.Tab.0.left" timestamp="1606593007056">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="625" key="GridCell.Tab.0.left/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606593007056" />
+    <state width="2449" height="625" key="GridCell.Tab.0.right" timestamp="1606593007056">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="625" key="GridCell.Tab.0.right/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606593007056" />
+    <state width="2449" height="488" key="GridCell.Tab.1.bottom" timestamp="1606180969184">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="488" key="GridCell.Tab.1.bottom/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606180969184" />
+    <state width="2449" height="488" key="GridCell.Tab.1.center" timestamp="1606180969184">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="488" key="GridCell.Tab.1.center/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606180969184" />
+    <state width="2449" height="488" key="GridCell.Tab.1.left" timestamp="1606180969184">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="488" key="GridCell.Tab.1.left/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606180969184" />
+    <state width="2449" height="488" key="GridCell.Tab.1.right" timestamp="1606180969184">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state width="2449" height="488" key="GridCell.Tab.1.right/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606180969184" />
+    <state x="3340" y="390" width="924" height="684" key="Maven.ArtifactSearchDialog" timestamp="1606157821192">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3340" y="390" width="924" height="684" key="Maven.ArtifactSearchDialog/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606157821192" />
+    <state x="3296" y="367" width="1024" height="845" key="SettingsEditor" timestamp="1606154438136">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3296" y="367" width="1024" height="845" key="SettingsEditor/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606154438136" />
+    <state x="3402" y="468" width="800" height="528" key="Vcs.Push.Dialog.v2" timestamp="1606262174127">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3402" y="468" width="800" height="528" key="Vcs.Push.Dialog.v2/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606262174127" />
+    <state x="3581" y="524" width="442" height="417" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1606587249873">
+      <screen x="2560" y="0" width="2560" height="1440" />
+    </state>
+    <state x="3581" y="524" width="442" height="417" key="com.intellij.testIntegration.createTest.CreateTestDialog/2560.0.2560.1440/0.27.2560.1413@2560.0.2560.1440" timestamp="1606587249873" />
+  </component>
+</project>

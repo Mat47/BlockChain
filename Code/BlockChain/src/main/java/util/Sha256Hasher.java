@@ -8,8 +8,10 @@ import java.security.NoSuchAlgorithmException;
 
 public class Sha256Hasher
 {
+    public static final int HASHLENGTH = 64;
+
     /**
-     * Generates a 256-bit hash. <br>https://www.baeldung.com/sha-256-hashing-java
+     * Generates a 256-bit (64-nibble) hash. <br>https://www.baeldung.com/sha-256-hashing-java
      *
      * @param dataToBeHashed
      * @return string of the hash's hex-format

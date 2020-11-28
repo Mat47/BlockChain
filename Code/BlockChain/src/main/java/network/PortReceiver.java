@@ -4,17 +4,19 @@ import app.Controller;
 import app.Node;
 import app.TxProposal;
 import ledger.SmartContract;
+import ledger.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import util.SigKey;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.util.Set;
-import java.util.logging.Logger;
 
 public class PortReceiver extends Thread
 {
-    private static final Logger logger = Logger.getLogger(PortReceiver.class.getName());
+    private static final Logger logger = LoggerFactory.getLogger(PortReceiver.class);
 
     private final Node node;
 
@@ -31,7 +33,7 @@ public class PortReceiver extends Thread
         try
         {
             DatagramSocket serverSocket = new DatagramSocket(node.getPort());
-            byte[] buffer = new byte[4112];
+            byte[] buffer = new byte[16384];
 
             while (true)
             {
@@ -53,9 +55,9 @@ public class PortReceiver extends Thread
                     case TxProposal:
                         logger.info("Received tx proposal " + message.getPayload());
                         TxProposal txProp = PacketHandler.parseTxProp(message);
-                        if (SmartContract.verifyTxProposal(txProp, message.getSigKey())) //todo check balance and if addr exists
+                        if (SmartContract.verifyTxProposal(txProp, message.getSigKey()))
                         {
-                            logger.info("Proposal validated, responding with endorsement...");
+                            logger.info("Proposal validated, responding with endorsement.");
                             SigKey sigKey = new SigKey(Controller.wallet.sign(txProp), Controller.wallet.getPub());
                             PortSender.endorseTx(message.getSender().getPort(), node, txProp, sigKey);
                         }
@@ -71,9 +73,10 @@ public class PortReceiver extends Thread
                         break;
 
                     case TxSubmission:
-                        logger.info("Received tx submission " + message);
-                        //todo
-                        // 1. check sigs, 2. store rcved tx in mempool
+                        Transaction submittedTx = PacketHandler.parseTx(message);
+                        logger.info("Received TX Submission " + submittedTx);
+                        //
+                        SmartContract.verifyTxSubmission(submittedTx);
                         break;
 
                     default:

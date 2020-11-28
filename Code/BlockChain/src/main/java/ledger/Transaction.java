@@ -26,6 +26,16 @@ public class Transaction
         this.endorsements = new HashSet<>();
     }
 
+    public String stringify()
+    {
+        return "Transaction{" +
+                "txProposal=" + txProposal +
+                ", sigKey=" + sigKey +
+                ", txId='" + txId + '\'' +
+                ", endorsements=" + endorsements +
+                '}';
+    }
+
     @Override
     public String toString()
     {

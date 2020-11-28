@@ -2,6 +2,9 @@ package util;
 
 import java.security.PublicKey;
 
+/**
+ * Container class to hold a signature and its belonging public key.
+ */
 public class SigKey
 {
     private byte[] sig;

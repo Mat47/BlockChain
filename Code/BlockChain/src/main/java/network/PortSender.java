@@ -2,17 +2,21 @@ package network;
 
 import app.Node;
 import app.TxProposal;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import ledger.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import util.SigKey;
 
 import java.io.IOException;
-import java.net.*;
+import java.net.DatagramPacket;
+import java.net.DatagramSocket;
+import java.net.InetAddress;
 import java.security.PublicKey;
-import java.util.Set;
 
 public class PortSender
 {
+    private static final Logger logger = LoggerFactory.getLogger(PortSender.class);
+
     public static void respondHandshake(int toPort, Node responder) throws IOException
     {
         Message        message = new Message(MessageType.PeerResponse, responder, null);
@@ -47,7 +51,6 @@ public class PortSender
         Message message = new Message(MessageType.TxSubmission, node, tx);
         byte[]  buffer = message.serialize();
 
-        //todo send to orderer
         int ordererPort = Config.getRandOrderer();
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("localhost"), ordererPort);
         new DatagramSocket().send(packet);

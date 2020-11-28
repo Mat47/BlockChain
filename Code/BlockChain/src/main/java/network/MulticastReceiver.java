@@ -3,21 +3,24 @@ package network;
 import app.Controller;
 import app.Node;
 import app.TxProposal;
+import ledger.Block;
+import ledger.BlockHeader;
 import ledger.SmartContract;
 import ledger.Transaction;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.InetAddress;
 import java.net.MulticastSocket;
-import java.util.logging.Logger;
 
 public class MulticastReceiver extends Thread
 {
-    Logger logger = Logger.getLogger(MulticastReceiver.class.getName());
+    private Logger logger = LoggerFactory.getLogger(MulticastReceiver.class);
 
     protected MulticastSocket socket = null;
-    protected Node node;
+    protected Node            node;
 
     public MulticastReceiver(Node user)
     {
@@ -37,7 +40,7 @@ public class MulticastReceiver extends Thread
 
             while (true)
             {
-                byte[]         buffer   = new byte[2056];
+                byte[]         buffer   = new byte[9800];
                 DatagramPacket incoming = new DatagramPacket(buffer, buffer.length);
 
                 socket.receive(incoming);
@@ -50,7 +53,7 @@ public class MulticastReceiver extends Thread
                 switch (message.getMsgType())
                 {
                     case PeerDiscovery:
-                        logger.info("[MC-Receiver] incoming peer discovery from " + message.getSender());
+                        logger.info("Incoming peer discovery from {}", message.getSender());
                         if (!PeerInfo.peers.contains(message.getSender()))
                         {
                             PortSender.respondHandshake(message.getSender().getPort(), node);
@@ -61,6 +64,25 @@ public class MulticastReceiver extends Thread
                         break;
 
                     case ChainSyncRequest:
+                        //
+                        break;
+
+                    case NewBlock:
+                        Block rcvBlock = PacketHandler.parseBlock(message);
+                        logger.info("Receiving new Block # {}.", rcvBlock.getHeader().getHash());
+//                        System.out.println("RCV NEW BLOCK " + received);
+                        if (SmartContract.verifyNewBlockSig(rcvBlock))
+                        {
+                            Controller.blockchain.add(rcvBlock);
+                            Controller.worldState.update(rcvBlock.getTxs());
+                            Controller.worldState.getMempool().clear();
+                        }
+                        else
+                        {
+                            logger.error("New Block invalid.");
+                        }
+                        //todo clear mempool
+                        // Controller.worldState.update(Controller.worldState.getMempool());
                         break;
                 }
             }

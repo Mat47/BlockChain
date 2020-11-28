@@ -1,5 +1,7 @@
 package app;
 
+import util.Sha256Hasher;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -26,13 +28,21 @@ public class TxProposal
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        System.out.print("enter receiver's address > ");
-        String receiver = reader.readLine();
+        String receiver = "";
+        while (receiver.length() != Sha256Hasher.HASHLENGTH)
+        {
+            System.out.print("enter receiver's address > ");
+            receiver = reader.readLine();
+        }
 
-        System.out.print("enter amount > ");
-        float amount = Float.parseFloat(reader.readLine());
+        double amount = 0;
+        while (amount <= 0)
+        {
+            System.out.print("enter amount > ");
+            amount = Double.parseDouble(reader.readLine());
+        }
 
-        return new TxProposal(user.getUsername(), receiver, amount);
+        return new TxProposal(user.getAddress(), receiver, amount);
     }
 
     public String stringify()

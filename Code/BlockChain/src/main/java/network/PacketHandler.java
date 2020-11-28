@@ -2,11 +2,17 @@ package network;
 
 import app.TxProposal;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import ledger.Block;
+import ledger.BlockHeader;
 import ledger.Transaction;
-import util.JsonMapper;
 
 import java.net.DatagramPacket;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class PacketHandler
@@ -21,13 +27,30 @@ public class PacketHandler
 
     public static Message parseMessage(DatagramPacket packet) throws JsonProcessingException
     {
-        String received = new String(packet.getData());
-        Message message = mapper.readValue(received, Message.class);
-        return message;
+        String  received = new String(packet.getData());
+        return mapper.readValue(received, Message.class);
     }
 
     public static TxProposal parseTxProp(Message message) throws JsonProcessingException
     {
         return mapper.readValue(mapper.writeValueAsString(message.getPayload()), TxProposal.class);
     }
+
+    public static Transaction parseTx(Message message) throws JsonProcessingException
+    {
+        return mapper.readValue(mapper.writeValueAsString(message.getPayload()), Transaction.class);
+    }
+
+    public static Block parseBlock(Message message) throws JsonProcessingException
+    {
+        BlockHeader       header = mapper.readValue(mapper.writeValueAsString(message.getPayload()), BlockHeader.class);
+
+        String jsonTXs = mapper.writeValueAsString(message.getTransactions());
+        List<Transaction> txs = mapper.readValue(jsonTXs, List.class);
+        List<Transaction> parsed = mapper.convertValue(txs, new TypeReference<List<Transaction>>() {});        System.out.println("txs " + txs);
+        Block             b      = new Block(header, parsed, message.getSigKey()); //todo sigKey
+//        System.out.println("PARSE " + b);
+        return b;
+    }
+
 }

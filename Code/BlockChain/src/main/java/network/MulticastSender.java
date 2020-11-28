@@ -1,20 +1,19 @@
 package network;
 
 import app.Node;
-import app.TxProposal;
-import ledger.Transaction;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import ledger.Block;
+import org.slf4j.LoggerFactory;
 import util.SigKey;
 
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.security.PublicKey;
-import java.util.logging.Logger;
 
 public class MulticastSender
 {
-    private static Logger logger = Logger.getLogger(MulticastSender.class.getName());
+    private static final org.slf4j.Logger logger = LoggerFactory.getLogger(MulticastSender.class);
 
     private static DatagramSocket socket;
     private static InetAddress    group;
@@ -30,7 +29,7 @@ public class MulticastSender
             byte[]  buffer = msg.serialize();
 
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
-            logger.info("[MCast] Sending handshake request...");
+            logger.info("Sending handshake request...");
             socket.send(packet);
 
         } catch (IOException e)
@@ -42,16 +41,15 @@ public class MulticastSender
         }
     }
 
-    public static void proposeTx(Node node, TxProposal txProposal, byte[] sig, PublicKey pubKey)
+    public static void sendNewBlock(Node orderer, Block latestBlock)
     {
         try
         {
             socket = new DatagramSocket();
             group = InetAddress.getByName(Config.multicastHost);
 
-            Message msg = new Message(MessageType.TxProposal, node, txProposal, new SigKey(sig, pubKey));
-            System.out.println("Tx before transmission " + msg);
-            byte[] buffer = msg.serialize();
+            Message msg    = new Message( MessageType.NewBlock, orderer, latestBlock.getHeader(), latestBlock.getTxs(), latestBlock.getOrdererSig());
+            byte[]  buffer = msg.serialize();
 
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
             socket.send(packet);

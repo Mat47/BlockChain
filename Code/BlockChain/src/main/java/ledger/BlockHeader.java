@@ -1,6 +1,10 @@
 package ledger;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import util.Sha256Hasher;
+
+import java.util.Objects;
 
 public class BlockHeader
 {
@@ -10,13 +14,33 @@ public class BlockHeader
     private long   timestamp;
     private String hash;
 
-    public BlockHeader(int height, String merkleRoot, String preHash)
+    public BlockHeader()
+    {
+    }
+
+    public BlockHeader(int height, String merkleRoot, String preHash, long timestamp)
     {
         this.height = height;
         this.merkleRoot = merkleRoot;
         this.preHash = preHash;
-        this.timestamp = System.currentTimeMillis();
-        this.hash = Sha256Hasher.hash(height + merkleRoot + preHash + timestamp);
+        this.timestamp = timestamp;
+        this.hash = genHash(height, merkleRoot, preHash, timestamp);
+    }
+
+    protected static String genHash(int height, String merkleRoot, String preHash, long timestamp)
+    {
+        return Sha256Hasher.hash(height + merkleRoot + preHash + timestamp);
+    }
+
+    public String stringify()
+    {
+        return "BlockHeader{" +
+                "height=" + height +
+                ", merkleRoot='" + merkleRoot + '\'' +
+                ", preHash='" + preHash + '\'' +
+                ", timestamp=" + timestamp +
+                ", hash='" + hash + '\'' +
+                '}';
     }
 
     @Override
@@ -29,6 +53,21 @@ public class BlockHeader
                 ", timestamp=" + timestamp +
                 ", hash='" + hash + '\'' +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o)
+    {
+        if (this == o) return true;
+        if (!(o instanceof BlockHeader)) return false;
+        BlockHeader that = (BlockHeader) o;
+        return Objects.equals(getHash(), that.getHash());
+    }
+
+    @Override
+    public int hashCode()
+    {
+        return Objects.hash(getHash());
     }
 
     //
@@ -56,4 +95,5 @@ public class BlockHeader
     {
         return hash;
     }
+
 }

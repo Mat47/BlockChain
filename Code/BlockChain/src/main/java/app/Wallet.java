@@ -1,6 +1,7 @@
 package app;
 
 import ledger.Asset;
+import ledger.BlockHeader;
 import util.Sha256Hasher;
 
 import java.security.KeyPair;
@@ -39,6 +40,23 @@ public class Wallet
             Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
             dsa.initSign(keyPair.getPrivate());
             dsa.update(txProp.stringify().getBytes()); // supplies tx data to the Sig object
+            return dsa.sign();
+
+        } catch (Exception e)
+        {
+            logger.warning("Tx could not be signed.");
+            e.printStackTrace();
+        }
+        return null;
+    }
+    public byte[] sign(BlockHeader blockHeader)
+    {
+        try
+        {
+            // specifies sig algo (DSA) using the digest algo (SHA-1)
+            Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
+            dsa.initSign(keyPair.getPrivate());
+            dsa.update(blockHeader.stringify().getBytes()); // supplies tx data to the Sig object
             return dsa.sign();
 
         } catch (Exception e)
