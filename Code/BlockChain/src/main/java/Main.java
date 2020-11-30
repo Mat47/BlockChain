@@ -21,10 +21,10 @@ public class Main
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         try
         {
-            System.out.print("Enter your port number > ");
+            System.out.print("\tenter your port number > ");
             int nodePort = Integer.parseInt(reader.readLine());
 
-            System.out.print("Enter your username > ");
+            System.out.print("\tenter your username > ");
             String username = reader.readLine();
 
             // requesting permission
