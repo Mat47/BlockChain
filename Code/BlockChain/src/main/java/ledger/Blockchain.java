@@ -1,6 +1,5 @@
 package ledger;
 
-import app.Controller;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import util.SigKey;
@@ -13,7 +12,7 @@ import java.util.List;
  */
 public class Blockchain
 {
-    private Logger logger = LoggerFactory.getLogger(Blockchain.class);
+    private final Logger logger = LoggerFactory.getLogger(Blockchain.class);
 
     private List<Block> chain;
 
@@ -21,7 +20,8 @@ public class Blockchain
     {
         this.chain = new ArrayList<>();
 
-        Block genesis = new Block(0, "1337", null, 1337, new ArrayList<>(), new SigKey());   // use hard coded genesis values for consistent genesis hash (across nodes)
+        // use hard coded genesis values for consistent genesis hash (across nodes)
+        Block genesis = new Block(0, "Genesis", null, 1337, new ArrayList<>(), new SigKey());
         chain.add(genesis);
     }
 
@@ -51,6 +51,19 @@ public class Blockchain
                         && newBlock.getHeader().getHash().equals(manHash);                                      // correct hash?
     }
 
+    public Block fetchBlock(String reqHash)
+    {
+        for (Block eachB : chain)
+        {
+            if (eachB.getHeader().getHash().equals(reqHash))
+            {
+                return eachB;
+            }
+        }
+        logger.error("There is no block with # {}.", reqHash);
+        return null;
+    }
+
 //    protected boolean verifyGenesis()
 //    {
 //        Block genesis = Controller.blockchain.getChain().get(0);
@@ -70,5 +83,6 @@ public class Blockchain
     {
         return chain;
     }
+
 
 }

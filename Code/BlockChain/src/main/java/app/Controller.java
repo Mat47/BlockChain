@@ -1,5 +1,6 @@
 package app;
 
+import accessPermission.Role;
 import ledger.*;
 import network.*;
 import org.slf4j.Logger;
@@ -45,9 +46,10 @@ public class Controller
 
         //
         MulticastSender.requestHandshake(node);
-//        MulticastSender.requestChainSync(node);
-
-        Thread.sleep(600);  // waiting for setup to finish
+//        MulticastSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
+        Thread.sleep(500);  // to finish handshake, avoids exception (IllegalArgumentException: Bound must be positive) PeerInfo.peers size 0
+        PortSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
+        Thread.sleep(500);  // to finish setup
 
         //
         BufferedReader reader            = new BufferedReader(new InputStreamReader(System.in));
@@ -70,13 +72,6 @@ public class Controller
 
                 case "2":
                     Explorer.print(blockchain, worldState);
-                    System.out.println();
-                    Iterator<String> it = worldState.getAccounts().keySet().iterator();
-                    while (it.hasNext())
-                    {
-                        String key = it.next();
-                        System.out.println("Account: " + key + "\tBalance: " + worldState.getAccounts().get(key));
-                    }
                     break;
 
                 case "3":
@@ -85,24 +80,31 @@ public class Controller
                     // sign tx proposal
                     byte[] sig = wallet.sign(txProposal);
                     PortSender.proposeTx(node, txProposal, sig, wallet.getPub());
-                    Thread.sleep(1600);
-                    // waiting 2 seconds before checking if proposal was endorsed
-                    if (PeerInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size()/2)   // 50% endorsement policy
+                    Thread.sleep(1100); // ...before checking if proposal was endorsed
+                    if (PeerInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size() / 2)   // 50% endorsement policy
                     {
                         logger.debug("EndorsementStatus " + PeerInfo.activeProposals);
-                        Transaction tx = new Transaction( txProposal, new SigKey(sig, wallet.getPub()) );
+                        Transaction tx = new Transaction(txProposal, new SigKey(sig, wallet.getPub()));
                         tx.setEndorsements(PeerInfo.activeProposals.get(txProposal));
                         PortSender.submitTxProposal(node, tx);
-                    } else {
+                    } else
+                    {
                         System.out.println(PeerInfo.activeProposals.get(txProposal) + " missing endorsements, forfeiting proposal.");
                     }
                     PeerInfo.activeProposals.remove(txProposal);
                     break;
 
                 case "9":
-//                    Block b = new Block()
+                    if (!node.getRights().contains(Role.ORDERER))
+                    {
+                        System.out.println("You are not authorised to order blocks.");
+                        break;
+                    }
+                    if (Controller.worldState.getMempool().isEmpty())
+                    {
+                        System.out.println("There are no pending transactions.");
+                    }
                     Block b = SmartContract.orderNewBlock(node);
-//                    Controller.blockchain.add(b);
                     MulticastSender.sendNewBlock(node, b);
                     break;
 

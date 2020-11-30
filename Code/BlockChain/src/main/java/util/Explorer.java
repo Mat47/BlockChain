@@ -1,6 +1,5 @@
 package util;
 
-import ledger.Block;
 import ledger.Blockchain;
 import ledger.Transaction;
 import ledger.WorldState;
@@ -14,13 +13,23 @@ public class Explorer
         System.out.println("- Chain");
         for (int i=0; i < bc.getChain().size(); i++)
         {
-            System.out.println(i + " " + bc.getChain().get(i));
+            System.out.println(i + " " + bc.getChain().get(i).getHeader());
+            for (Transaction tx : bc.getChain().get(i).getTxs())
+            {
+                System.out.println("\t" + tx);
+            }
         }
 
         System.out.println("- MemPool");
         for (Transaction tx : ws.getMempool())
         {
             System.out.println(tx.getTxProposal());
+        }
+
+        System.out.println();
+        for (String key : ws.getAccounts().keySet())
+        {
+            System.out.println("Address: " + key + "\tBalance: " + ws.getAccounts().get(key));
         }
     }
 }

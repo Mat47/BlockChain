@@ -17,7 +17,7 @@ public class Wallet
 
     private KeyPair             keyPair;
     private String              address;
-    private Map<Asset, Integer> assets;
+    private Map<Asset, Integer> balance;
 
     public Wallet()
     {
@@ -28,8 +28,8 @@ public class Wallet
     {
         this.keyPair = keyPair;
         this.address = Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
-        this.assets = new HashMap<>();
-        assets.put(Asset.ETH, 32);  // adding initial assets for demo purposes
+        this.balance = new HashMap<>();
+        balance.put(Asset.ETH, 32);  // adding initial assets for demo purposes
     }
 
     public byte[] sign(TxProposal txProp)
@@ -78,8 +78,8 @@ public class Wallet
         return Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
     }
 
-    public Map<Asset, Integer> getAssets()
+    public Map<Asset, Integer> getBalance()
     {
-        return assets;
+        return balance;
     }
 }

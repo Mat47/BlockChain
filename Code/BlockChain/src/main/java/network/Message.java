@@ -3,6 +3,7 @@ package network;
 import app.Node;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
+import ledger.Block;
 import ledger.BlockHeader;
 import ledger.Transaction;
 import util.JsonMapper;

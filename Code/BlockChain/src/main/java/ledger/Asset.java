@@ -4,7 +4,7 @@ public enum Asset
 {
     BTC("Bitcoin", 20000),
     ETH("Ethereum", 500),
-    WedToken("PropertyWed", 12500);
+    Prop0815("PropertyToken", 12500);
 
     private String name;
     private double price;

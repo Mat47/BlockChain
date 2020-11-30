@@ -32,7 +32,7 @@ public class Block
     {
         return "Block{" +
                 "header=" + header +
-                ", txs=" + txs +
+                ", TXs=" + txs +
                 '}';
     }
 
@@ -41,7 +41,7 @@ public class Block
     {
         return "Block{" +
                 "header=" + header +
-                ", txs=" + txs +
+                ", TXs=" + txs +
                 '}';
     }
 

@@ -53,7 +53,7 @@ public class MulticastReceiver extends Thread
                 switch (message.getMsgType())
                 {
                     case PeerDiscovery:
-                        logger.info("Incoming peer discovery from {}", message.getSender());
+                        logger.info("incoming peer discovery from {}.", message.getSender());
                         if (!PeerInfo.peers.contains(message.getSender()))
                         {
                             PortSender.respondHandshake(message.getSender().getPort(), node);
@@ -63,26 +63,58 @@ public class MulticastReceiver extends Thread
                         }
                         break;
 
-                    case ChainSyncRequest:
-                        //
-                        break;
+//                    case ChainSyncRequest:
+//                        // do not process request from oneself
+//                        if (!message.getSender().equals(node))
+//                        {
+//                            BlockHeader rcvBlockHeader = PacketHandler.parseBlockHeader(message);
+//                            logger.info("incoming chain sync request, {}.", rcvBlockHeader);
+//
+//                            int chainHeight     = Controller.blockchain.getChain().size();
+//                            int bestHeightPeer  = rcvBlockHeader.getHeight() + 1;
+//                            int noMissingBlocks = chainHeight - bestHeightPeer;
+//
+//                            if (noMissingBlocks == 0)
+//                            {
+//                                // send info (null block) that new peer's chain is up to date
+//                                logger.info("{}'s chain is up to date.", message.getSender());
+//                                PortSender.respondChainSync(message.getSender().getPort(), node, null);
+//
+//                            } else {
+//                                // respond with next block in line
+//                                logger.debug("{} is {} block(s) behind.", message.getSender(), noMissingBlocks);
+//                                Block localBlock = Controller.blockchain.fetchBlock(rcvBlockHeader.getHash());
+//                                if (localBlock == null)
+//                                {
+//                                    logger.warn("requester sent invalid block => has invalid chain.");
+//                                } else {
+//                                    Block nextBlock = Controller.blockchain.getChain()
+//                                            .get( localBlock.getHeader().getHeight()+1 );
+//
+////                                    logger.debug("responding with {}.", nextBlock);
+//                                    PortSender.respondChainSync( message.getSender().getPort(), node, nextBlock);
+//                                }
+//
+////                            Block nextBlock = Main.blockchain.getChain().get(peerHeight);
+////                            System.out.println("Sending next block: " + nextBlock);
+////                            Main.nodeClient.sendChainSyncResponse(peerPort, nextBlock, noMissingBlocks);
+//                            }
+//                        }
+//                        break;
 
                     case NewBlock:
                         Block rcvBlock = PacketHandler.parseBlock(message);
-                        logger.info("Receiving new Block # {}.", rcvBlock.getHeader().getHash());
+                        logger.info("receiving new Block # {}.", rcvBlock.getHeader().getHash());
 //                        System.out.println("RCV NEW BLOCK " + received);
                         if (SmartContract.verifyNewBlockSig(rcvBlock))
                         {
                             Controller.blockchain.add(rcvBlock);
                             Controller.worldState.update(rcvBlock.getTxs());
                             Controller.worldState.getMempool().clear();
-                        }
-                        else
+                        } else
                         {
                             logger.error("New Block invalid.");
                         }
-                        //todo clear mempool
-                        // Controller.worldState.update(Controller.worldState.getMempool());
                         break;
                 }
             }

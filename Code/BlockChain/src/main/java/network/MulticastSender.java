@@ -3,6 +3,7 @@ package network;
 import app.Node;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ledger.Block;
+import ledger.BlockHeader;
 import org.slf4j.LoggerFactory;
 import util.SigKey;
 
@@ -41,6 +42,28 @@ public class MulticastSender
         }
     }
 
+    public static void requestChainSync(Node requester, BlockHeader blockHeader)
+    {
+        try
+        {
+            socket = new DatagramSocket();
+            group = InetAddress.getByName(Config.multicastHost);
+
+            Message msg    = new Message(MessageType.ChainSyncRequest, requester, blockHeader);
+            byte[]  buffer = msg.serialize();
+
+            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
+            socket.send(packet);
+
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            socket.close();
+        }
+    }
+
     public static void sendNewBlock(Node orderer, Block latestBlock)
     {
         try
@@ -62,4 +85,5 @@ public class MulticastSender
             socket.close();
         }
     }
+
 }

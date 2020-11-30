@@ -30,7 +30,7 @@ public class SmartContract
 //        {
 //            return false;
 //        }
-        if( Controller.blockchain.verifyBlock(b) && isSigValid(b.getHeader().stringify(), b.getOrdererSig()) )
+        if (Controller.blockchain.verifyBlock(b) && isSigValid(b.getHeader().stringify(), b.getOrdererSig()))
         {
             return true;
         }
@@ -38,7 +38,8 @@ public class SmartContract
     }
 
     /**
-     * Orders (locally) then broadcasts a new block.
+     * Orders a new block (locally).
+     *
      * @param orderer the node attempting the ordering ("mining") process
      * @return
      */
@@ -47,17 +48,15 @@ public class SmartContract
         if (!orderer.getRights().contains(Role.ORDERER))
         {
             System.out.println("You are not authorised to order blocks.");
+            return null;
         }
-        else
-        {
-            MerkleTree  merkleTree  = new MerkleTree(Controller.worldState.getMempool());
-            String      root        = merkleTree.getMerkleRoot().get(0);
-            BlockHeader blockHeader = new BlockHeader(Controller.blockchain.getLatestBlock().getHeader().getHeight() + 1, root, Controller.blockchain.getLatestBlock().getHeader().getHash(), System.currentTimeMillis());
-            SigKey      sigKey      = new SigKey(Controller.wallet.sign(blockHeader), Controller.wallet.getPub());
-            return new Block(blockHeader, Controller.worldState.getMempool(), sigKey);
-            //return Controller.worldState.processMempool();
-        }
-        return null;
+
+        MerkleTree  merkleTree  = new MerkleTree(Controller.worldState.getMempool());
+        String      root        = merkleTree.getMerkleRoot().get(0);
+        BlockHeader blockHeader = new BlockHeader(Controller.blockchain.getLatestBlock().getHeader().getHeight() + 1, root, Controller.blockchain.getLatestBlock().getHeader().getHash(), System.currentTimeMillis());
+        SigKey      sigKey      = new SigKey(Controller.wallet.sign(blockHeader), Controller.wallet.getPub());
+        return new Block(blockHeader, Controller.worldState.getMempool(), sigKey);
+        //return Controller.worldState.processMempool();
     }
 
     public static boolean verifyTxProposal(TxProposal txProp, SigKey sigKey)
@@ -67,12 +66,12 @@ public class SmartContract
             logger.error("Address {} does not exist.", txProp.getFromAddress());
             return false;
         }
-        if( !isSigValid(txProp.stringify(), sigKey) )
+        if (!isSigValid(txProp.stringify(), sigKey))
         {
             logger.error("Invalid proposal, corrupted Signature.");
             return false;
         }
-        if( Controller.worldState.getAccounts().get(txProp.getFromAddress()) < txProp.getAmount() )
+        if (Controller.worldState.getAccounts().get(txProp.getFromAddress()) < txProp.getAmount())
         {
             logger.error("Invalid proposal, not enough funds on account.");
             return false;
@@ -82,17 +81,17 @@ public class SmartContract
 
     public static boolean verifyTxSubmission(Transaction submittedTx)
     {
-        if( !areEndorsementsValid(submittedTx) )
+        if (!areEndorsementsValid(submittedTx))
         {
             logger.info("Invalid tx, corrupted Signature.");
             return false;
         }
-        if( !isSigValid(submittedTx.getTxProposal().stringify(), submittedTx.getSigKey()) )
+        if (!isSigValid(submittedTx.getTxProposal().stringify(), submittedTx.getSigKey()))
         {
             logger.info("Invalid tx, corrupted Signature.");
             return false;
         }
-        if( Controller.worldState.getAccounts().get(submittedTx.getTxProposal().getFromAddress()) < submittedTx.getTxProposal().getAmount() )
+        if (Controller.worldState.getAccounts().get(submittedTx.getTxProposal().getFromAddress()) < submittedTx.getTxProposal().getAmount())
         {
             logger.info("Invalid proposal, not enough funds on account.");
             return false;
@@ -125,10 +124,10 @@ public class SmartContract
     private static boolean areEndorsementsValid(Transaction tx)
     {
         int i = 1;
-        for(SigKey sigKey : tx.getEndorsements())
+        for (SigKey sigKey : tx.getEndorsements())
         {
             System.out.print(i + ". endorsement " + sigKey + " ");
-            if(!isSigValid(tx.getTxProposal().stringify(), sigKey))
+            if (!isSigValid(tx.getTxProposal().stringify(), sigKey))
             {
                 return false;
             }

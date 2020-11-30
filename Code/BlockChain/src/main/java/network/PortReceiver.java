@@ -3,6 +3,8 @@ package network;
 import app.Controller;
 import app.Node;
 import app.TxProposal;
+import ledger.Block;
+import ledger.BlockHeader;
 import ledger.SmartContract;
 import ledger.Transaction;
 import org.slf4j.Logger;
@@ -45,15 +47,68 @@ public class PortReceiver extends Thread
                 switch (message.getMsgType())
                 {
                     case PeerResponse:
-                        logger.info("New peer response from " + message.getSender());
+                        logger.info("new peer response from " + message.getSender());
                         PeerInfo.peers.add(message.getSender());
 
                         // adds address to chain accounts
                         Controller.worldState.getAccounts().put(message.getSender().getAddress(), 100.);
                         break;
 
+                    case ChainSyncRequest:
+                        // do not process request from oneself
+                        if (!message.getSender().equals(node))
+                        {
+                            BlockHeader rcvBlockHeader = PacketHandler.parseBlockHeader(message);
+                            logger.info("incoming chain sync request, {}.", rcvBlockHeader);
+
+                            int chainHeight     = Controller.blockchain.getChain().size();
+                            int bestHeightPeer  = rcvBlockHeader.getHeight() + 1;
+                            int noMissingBlocks = chainHeight - bestHeightPeer;
+
+                            if (noMissingBlocks == 0)
+                            {
+                                // send info (null block) that new peer's chain is up to date
+                                logger.info("{}'s chain is up to date.", message.getSender());
+                                PortSender.respondChainSync(message.getSender().getPort(), node, null);
+
+                            } else {
+                                // respond with next block in line
+                                logger.debug("{} is {} block(s) behind.", message.getSender(), noMissingBlocks);
+                                Block localBlock = Controller.blockchain.fetchBlock(rcvBlockHeader.getHash());
+                                if (localBlock == null)
+                                {
+                                    logger.warn("requester sent invalid block => has invalid chain.");
+                                } else {
+                                    Block nextBlock = Controller.blockchain.getChain()
+                                            .get( localBlock.getHeader().getHeight()+1 );
+
+//                                    logger.debug("responding with {}.", nextBlock);
+                                    PortSender.respondChainSync( message.getSender().getPort(), node, nextBlock);
+                                }
+
+//                            Block nextBlock = Main.blockchain.getChain().get(peerHeight);
+//                            System.out.println("Sending next block: " + nextBlock);
+//                            Main.nodeClient.sendChainSyncResponse(peerPort, nextBlock, noMissingBlocks);
+                            }
+                        }
+                        break;
+
+                    case ChainSyncResponse:
+                        if (message.getPayload() == null)
+                        {
+                            logger.info("Sync response contains no block, local chain is up to date.");
+                        }
+                        else
+                        {
+                            Block nextBlock = PacketHandler.parseBlock(message);
+                            Controller.blockchain.add(nextBlock);
+                            Controller.worldState.update(nextBlock.getTxs());
+                            PortSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
+                        }
+                        break;
+
                     case TxProposal:
-                        logger.info("Received tx proposal " + message.getPayload());
+                        logger.info("incoming TX Proposal " + message.getPayload());
                         TxProposal txProp = PacketHandler.parseTxProp(message);
                         if (SmartContract.verifyTxProposal(txProp, message.getSigKey()))
                         {
@@ -64,17 +119,18 @@ public class PortReceiver extends Thread
                         break;
 
                     case TxEndorsement:
-                        logger.info("Received endorsement " + message);
+                        logger.info("incoming TX Endorsement " + message);
+                        TxProposal endorsedProposal = PacketHandler.parseTxProp(message);
 
-                        // add endorsement sigKey
-                        Set<SigKey> endorsements = PeerInfo.activeProposals.get(PacketHandler.parseTxProp(message));
+                        // update endorsement (add sigKey of endorser)
+                        Set<SigKey> endorsements = PeerInfo.activeProposals.get(endorsedProposal);
                         endorsements.add(message.getSigKey());
-                        PeerInfo.activeProposals.put(PacketHandler.parseTxProp(message), endorsements);
+                        PeerInfo.activeProposals.put(endorsedProposal, endorsements);
                         break;
 
                     case TxSubmission:
                         Transaction submittedTx = PacketHandler.parseTx(message);
-                        logger.info("Received TX Submission " + submittedTx);
+                        logger.info("incoming TX Submission " + submittedTx);
                         //
                         SmartContract.verifyTxSubmission(submittedTx);
                         break;

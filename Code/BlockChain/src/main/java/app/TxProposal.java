@@ -31,14 +31,14 @@ public class TxProposal
         String receiver = "";
         while (receiver.length() != Sha256Hasher.HASHLENGTH)
         {
-            System.out.print("enter receiver's address > ");
+            System.out.print("\tenter receiver's address > ");
             receiver = reader.readLine();
         }
 
         double amount = 0;
         while (amount <= 0)
         {
-            System.out.print("enter amount > ");
+            System.out.print("\tenter amount > ");
             amount = Double.parseDouble(reader.readLine());
         }
 
@@ -47,7 +47,7 @@ public class TxProposal
 
     public String stringify()
     {
-        return "TxProposal{" +
+        return "{" +
                 "fromAddress='" + fromAddress + '\'' +
                 ", toAddress='" + toAddress + '\'' +
                 ", amount=" + amount +
@@ -57,7 +57,7 @@ public class TxProposal
     @Override
     public String toString()
     {
-        return "TxProposal{" +
+        return "{" +
                 "fromAddress='" + fromAddress + '\'' +
                 ", toAddress='" + toAddress + '\'' +
                 ", amount=" + amount +

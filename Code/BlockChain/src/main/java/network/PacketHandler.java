@@ -47,10 +47,14 @@ public class PacketHandler
 
         String jsonTXs = mapper.writeValueAsString(message.getTransactions());
         List<Transaction> txs = mapper.readValue(jsonTXs, List.class);
-        List<Transaction> parsed = mapper.convertValue(txs, new TypeReference<List<Transaction>>() {});        System.out.println("txs " + txs);
-        Block             b      = new Block(header, parsed, message.getSigKey()); //todo sigKey
+        List<Transaction> parsed = mapper.convertValue(txs, new TypeReference<List<Transaction>>() {});
+        Block             b      = new Block(header, parsed, message.getSigKey());
 //        System.out.println("PARSE " + b);
         return b;
     }
 
+    public static BlockHeader parseBlockHeader(Message message) throws JsonProcessingException
+    {
+        return mapper.readValue(mapper.writeValueAsString(message.getPayload()), BlockHeader.class);
+    }
 }
