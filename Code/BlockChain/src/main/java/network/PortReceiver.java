@@ -35,7 +35,7 @@ public class PortReceiver extends Thread
         try
         {
             DatagramSocket serverSocket = new DatagramSocket(node.getPort());
-            byte[] buffer = new byte[16384];
+            byte[]         buffer       = new byte[16384];
 
             while (true)
             {
@@ -61,6 +61,13 @@ public class PortReceiver extends Thread
                             BlockHeader rcvBlockHeader = PacketHandler.parseBlockHeader(message);
                             logger.info("incoming chain sync request, {}.", rcvBlockHeader);
 
+                            Block localBlock = Controller.blockchain.fetchBlock(rcvBlockHeader.getHash());
+                            if (localBlock == null)
+                            {
+                                logger.warn("requester sent invalid or corrupted block.");
+                                break;
+                            }
+
                             int chainHeight     = Controller.blockchain.getChain().size();
                             int bestHeightPeer  = rcvBlockHeader.getHeight() + 1;
                             int noMissingBlocks = chainHeight - bestHeightPeer;
@@ -71,24 +78,15 @@ public class PortReceiver extends Thread
                                 logger.info("{}'s chain is up to date.", message.getSender());
                                 PortSender.respondChainSync(message.getSender().getPort(), node, null);
 
-                            } else {
+                            } else
+                            {
                                 // respond with next block in line
                                 logger.debug("{} is {} block(s) behind.", message.getSender(), noMissingBlocks);
-                                Block localBlock = Controller.blockchain.fetchBlock(rcvBlockHeader.getHash());
-                                if (localBlock == null)
-                                {
-                                    logger.warn("requester sent invalid block => has invalid chain.");
-                                } else {
-                                    Block nextBlock = Controller.blockchain.getChain()
-                                            .get( localBlock.getHeader().getHeight()+1 );
+                                Block nextBlock = Controller.blockchain.getChain()
+                                        .get(localBlock.getHeader().getHeight() + 1);
 
 //                                    logger.debug("responding with {}.", nextBlock);
-                                    PortSender.respondChainSync( message.getSender().getPort(), node, nextBlock);
-                                }
-
-//                            Block nextBlock = Main.blockchain.getChain().get(peerHeight);
-//                            System.out.println("Sending next block: " + nextBlock);
-//                            Main.nodeClient.sendChainSyncResponse(peerPort, nextBlock, noMissingBlocks);
+                                PortSender.respondChainSync(message.getSender().getPort(), node, nextBlock);
                             }
                         }
                         break;
@@ -97,8 +95,7 @@ public class PortReceiver extends Thread
                         if (message.getPayload() == null)
                         {
                             logger.info("Sync response contains no block, local chain is up to date.");
-                        }
-                        else
+                        } else
                         {
                             Block nextBlock = PacketHandler.parseBlock(message);
                             Controller.blockchain.add(nextBlock);
@@ -112,7 +109,8 @@ public class PortReceiver extends Thread
                         TxProposal txProp = PacketHandler.parseTxProp(message);
                         if (SmartContract.verifyTxProposal(txProp, message.getSigKey()))
                         {
-                            logger.info("Proposal validated, responding with endorsement.");
+                            logger.info("endorsing proposal; added to mempool");
+                            Controller.worldState.getMempool().add(new Transaction(txProp, message.getSigKey()));
                             SigKey sigKey = new SigKey(Controller.wallet.sign(txProp), Controller.wallet.getPub());
                             PortSender.endorseTx(message.getSender().getPort(), node, txProp, sigKey);
                         }
@@ -132,7 +130,14 @@ public class PortReceiver extends Thread
                         Transaction submittedTx = PacketHandler.parseTx(message);
                         logger.info("incoming TX Submission " + submittedTx);
                         //
-                        SmartContract.verifyTxSubmission(submittedTx);
+                        if (SmartContract.verifyTxSubmission(submittedTx))
+                        {
+                            Controller.worldState.getMempool().add(submittedTx);
+                            logger.debug("{} is valid, added to mempool.", submittedTx);
+                        } else
+                        {
+                            logger.error("{} rejected.", submittedTx);
+                        }
                         break;
 
                     default:

@@ -1,5 +1,6 @@
 package network;
 
+import app.Controller;
 import app.Node;
 import app.TxProposal;
 import ledger.Block;
@@ -29,6 +30,7 @@ public class PeerInfo
         int i = 0;
         for(Node eachN : peers)
         {
+            //todo could find oneself?
             if (i == item)
                 return eachN;
             i++;

@@ -2,7 +2,6 @@ package network;
 
 import app.Node;
 import app.TxProposal;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import ledger.Block;
 import ledger.BlockHeader;
 import ledger.Transaction;
@@ -14,7 +13,6 @@ import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.SocketException;
 import java.security.PublicKey;
 
 public class PortSender
@@ -32,8 +30,8 @@ public class PortSender
 
     public static void requestChainSync(Node requester, BlockHeader blockHeader) throws IOException
     {
-        Message msg    = new Message(MessageType.ChainSyncRequest, requester, blockHeader);
-        byte[]  buffer = msg.serialize();
+        Message<BlockHeader> msg    = new Message<>(MessageType.ChainSyncRequest, requester, blockHeader);
+        byte[]               buffer = msg.serialize();
 
         int toPort = PeerInfo.fetchRandPeer().getPort();
         DatagramPacket packet  = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("localhost"), toPort);
@@ -42,13 +40,13 @@ public class PortSender
 
     public static void respondChainSync(int toPort, Node responder, Block b) throws IOException
     {
-        Message message;
+        Message<BlockHeader> message;
         if (b == null)
         {
-            message = new Message(MessageType.ChainSyncResponse, responder, null);
+            message = new Message<>(MessageType.ChainSyncResponse, responder, null);
         }
         else {
-            message = new Message(MessageType.ChainSyncResponse, responder, b.getHeader(), b.getTxs(), b.getOrdererSig());
+            message = new Message<>(MessageType.ChainSyncResponse, responder, b.getHeader(), b.getTxs(), b.getOrdererSig());
         }
         byte[] buffer = message.serialize();
 
@@ -60,8 +58,8 @@ public class PortSender
     {
         for (int port : Config.endorsers)
         {
-            Message message = new Message(MessageType.TxProposal, node, txProposal, new SigKey(sign, pub));
-            byte[]  buffer = message.serialize();
+            Message<TxProposal> message = new Message<>(MessageType.TxProposal, node, txProposal, new SigKey(sign, pub));
+            byte[]              buffer  = message.serialize();
 
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("localhost"), port);
             new DatagramSocket().send(packet);
@@ -70,8 +68,8 @@ public class PortSender
 
     public static void endorseTx(int toPort, Node endorser, TxProposal txProp, SigKey sigKey) throws IOException
     {
-        Message message = new Message(MessageType.TxEndorsement, endorser, txProp, sigKey);
-        byte[]  buffer = message.serialize();
+        Message<TxProposal> message = new Message<>(MessageType.TxEndorsement, endorser, txProp, sigKey);
+        byte[]              buffer  = message.serialize();
 
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("localhost"), toPort);
         new DatagramSocket().send(packet);
@@ -79,13 +77,12 @@ public class PortSender
 
     public static void submitTxProposal(Node requester, Transaction tx) throws IOException
     {
-        Message message = new Message(MessageType.TxSubmission, requester, tx);
-        byte[]  buffer = message.serialize();
+        Message<Transaction> message = new Message<>(MessageType.TxSubmission, requester, tx);
+        byte[]               buffer  = message.serialize();
 
         int ordererPort = Config.getRandOrderer();
         DatagramPacket packet = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("localhost"), ordererPort);
         new DatagramSocket().send(packet);
     }
-
 
 }

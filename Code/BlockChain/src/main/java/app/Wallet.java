@@ -18,6 +18,7 @@ public class Wallet
     private KeyPair             keyPair;
     private String              address;
     private Map<Asset, Integer> balance;
+//    private spendable;
 
     public Wallet()
     {
@@ -44,7 +45,7 @@ public class Wallet
 
         } catch (Exception e)
         {
-            logger.warning("Tx could not be signed.");
+            logger.warning("Tx proposal could not be signed.");
             e.printStackTrace();
         }
         return null;
@@ -65,6 +66,16 @@ public class Wallet
             e.printStackTrace();
         }
         return null;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "Wallet{" +
+                //"keyPair=" + keyPair +
+                ", address='" + address + '\'' +
+                ", balance=" + balance +
+                '}';
     }
 
     //

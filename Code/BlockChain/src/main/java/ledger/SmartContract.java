@@ -53,7 +53,12 @@ public class SmartContract
 
         MerkleTree  merkleTree  = new MerkleTree(Controller.worldState.getMempool());
         String      root        = merkleTree.getMerkleRoot().get(0);
-        BlockHeader blockHeader = new BlockHeader(Controller.blockchain.getLatestBlock().getHeader().getHeight() + 1, root, Controller.blockchain.getLatestBlock().getHeader().getHash(), System.currentTimeMillis());
+        BlockHeader blockHeader = new BlockHeader(
+                Controller.blockchain.getLatestBlock().getHeader().getHeight() + 1,
+                root,
+                Controller.blockchain.getLatestBlock().getHeader().getHash(),
+                System.currentTimeMillis()
+        );
         SigKey      sigKey      = new SigKey(Controller.wallet.sign(blockHeader), Controller.wallet.getPub());
         return new Block(blockHeader, Controller.worldState.getMempool(), sigKey);
         //return Controller.worldState.processMempool();
@@ -63,17 +68,19 @@ public class SmartContract
     {
         if (Controller.worldState.getAccounts().get(txProp.getFromAddress()).equals(null))
         {
-            logger.error("Address {} does not exist.", txProp.getFromAddress());
+            logger.error("Account/Address {} does not exist.", txProp.getFromAddress());
             return false;
         }
         if (!isSigValid(txProp.stringify(), sigKey))
         {
-            logger.error("Invalid proposal, corrupted Signature.");
+            logger.error("corrupted/invalid signature, proposal rejected.");
             return false;
         }
-        if (Controller.worldState.getAccounts().get(txProp.getFromAddress()) < txProp.getAmount())
+
+        double balance = Controller.worldState.fetchBalance(txProp.getFromAddress());
+        if (balance < txProp.getAmount())
         {
-            logger.error("Invalid proposal, not enough funds on account.");
+            logger.error("insufficient funds, proposal rejected.");
             return false;
         }
         return true;
@@ -96,9 +103,6 @@ public class SmartContract
             logger.info("Invalid proposal, not enough funds on account.");
             return false;
         }
-
-        Controller.worldState.getMempool().add(submittedTx);
-        logger.debug("{} is valid, added to mempool.", submittedTx);
         return true;
     }
 

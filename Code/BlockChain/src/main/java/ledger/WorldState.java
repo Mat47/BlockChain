@@ -1,5 +1,6 @@
 package ledger;
 
+import app.Wallet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,6 +14,7 @@ public class WorldState
     private final Logger logger = LoggerFactory.getLogger(WorldState.class);
 
     private Map<String, Double> accounts;   // hashMap<address, balance>
+//    List<Wallet> accounts;
     private List<Transaction>   mempool;
 
     public WorldState()
@@ -39,6 +41,24 @@ public class WorldState
         }
         this.mempool.clear();
         logger.info("Updated world state, mempool cleared.");
+    }
+
+    /**
+     * Fetches the address' account balance taking the mempool into consideration hence avoiding double-spend
+     * @param address the account
+     * @return address' balance
+     */
+    public double fetchBalance(String address)
+    {
+        double balance = accounts.get(address);
+        for (Transaction tx : mempool)
+        {
+            if (tx.getTxProposal().getFromAddress().equals(address))
+            {
+                balance -= tx.getTxProposal().getAmount();
+            }
+        }
+        return balance;
     }
 
     public List<Transaction> getMempool()

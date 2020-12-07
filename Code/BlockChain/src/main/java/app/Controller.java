@@ -13,8 +13,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.security.KeyPair;
 import java.util.HashSet;
-import java.util.Iterator;
 
+/**
+ * Central instance controlling the business logic.
+ */
 public class Controller
 {
     private static final Logger logger = LoggerFactory.getLogger(Controller.class);
@@ -47,9 +49,9 @@ public class Controller
         //
         MulticastSender.requestHandshake(node);
 //        MulticastSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
-        Thread.sleep(500);  // to finish handshake, avoids exception (IllegalArgumentException: Bound must be positive) PeerInfo.peers size 0
+        Thread.sleep(400);  // to finish handshake, avoids exception (IllegalArgumentException: Bound must be positive) PeerInfo.peers size 0
         PortSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
-        Thread.sleep(500);  // to finish setup
+        Thread.sleep(400);  // to finish setup
 
         //
         BufferedReader reader            = new BufferedReader(new InputStreamReader(System.in));
@@ -71,17 +73,22 @@ public class Controller
                     break;
 
                 case "2":
-                    Explorer.print(blockchain, worldState);
+                    System.out.println(wallet);
+                    //todo display wallet
                     break;
 
                 case "3":
+                    Explorer.print(blockchain, worldState);
+                    break;
+
+                case "4":
                     TxProposal txProposal = TxProposal.createTxPropUI(node);
                     PeerInfo.activeProposals.put(txProposal, new HashSet<>());
                     // sign tx proposal
                     byte[] sig = wallet.sign(txProposal);
                     PortSender.proposeTx(node, txProposal, sig, wallet.getPub());
                     Thread.sleep(1100); // ...before checking if proposal was endorsed
-                    if (PeerInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size() / 2)   // 50% endorsement policy
+                    if (PeerInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size()/2)   //todo 70% endorsement policy
                     {
                         logger.debug("EndorsementStatus " + PeerInfo.activeProposals);
                         Transaction tx = new Transaction(txProposal, new SigKey(sig, wallet.getPub()));
@@ -89,7 +96,7 @@ public class Controller
                         PortSender.submitTxProposal(node, tx);
                     } else
                     {
-                        System.out.println(PeerInfo.activeProposals.get(txProposal) + " missing endorsements, forfeiting proposal.");
+                        logger.info("missing endorsements, forfeiting proposal.");
                     }
                     PeerInfo.activeProposals.remove(txProposal);
                     break;
@@ -103,6 +110,7 @@ public class Controller
                     if (Controller.worldState.getMempool().isEmpty())
                     {
                         System.out.println("There are no pending transactions.");
+                        break;
                     }
                     Block b = SmartContract.orderNewBlock(node);
                     MulticastSender.sendNewBlock(node, b);

@@ -19,9 +19,7 @@ public class MerkleTree
     public MerkleTree(List<Transaction> transactions)
     {
         this.transactionHashes = new ArrayList<>();
-        transactions.forEach(tx -> {
-            transactionHashes.add( Sha256Hasher.hash(tx.stringify()) );
-        });
+        transactions.forEach(tx -> transactionHashes.add( Sha256Hasher.hash(tx.stringify()) ));
     }
 
     public List<String> getMerkleRoot()

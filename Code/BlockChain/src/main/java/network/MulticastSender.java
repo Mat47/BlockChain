@@ -42,27 +42,27 @@ public class MulticastSender
         }
     }
 
-    public static void requestChainSync(Node requester, BlockHeader blockHeader)
-    {
-        try
-        {
-            socket = new DatagramSocket();
-            group = InetAddress.getByName(Config.multicastHost);
-
-            Message msg    = new Message(MessageType.ChainSyncRequest, requester, blockHeader);
-            byte[]  buffer = msg.serialize();
-
-            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
-            socket.send(packet);
-
-        } catch (IOException e)
-        {
-            e.printStackTrace();
-        } finally
-        {
-            socket.close();
-        }
-    }
+//    public static void requestChainSync(Node requester, BlockHeader blockHeader)
+//    {
+//        try
+//        {
+//            socket = new DatagramSocket();
+//            group = InetAddress.getByName(Config.multicastHost);
+//
+//            Message msg    = new Message(MessageType.ChainSyncRequest, requester, blockHeader);
+//            byte[]  buffer = msg.serialize();
+//
+//            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
+//            socket.send(packet);
+//
+//        } catch (IOException e)
+//        {
+//            e.printStackTrace();
+//        } finally
+//        {
+//            socket.close();
+//        }
+//    }
 
     public static void sendNewBlock(Node orderer, Block latestBlock)
     {
