@@ -98,11 +98,11 @@ public class SmartContract
             logger.info("Invalid tx, corrupted Signature.");
             return false;
         }
-        if (Controller.worldState.getAccounts().get(submittedTx.getTxProposal().getFromAddress()) < submittedTx.getTxProposal().getAmount())
-        {
-            logger.info("Invalid proposal, not enough funds on account.");
-            return false;
-        }
+//        if (Controller.worldState.getAccounts().get(submittedTx.getTxProposal().getFromAddress()) < submittedTx.getTxProposal().getAmount())
+//        {
+//            logger.info("Invalid proposal, not enough funds on account.");
+//            return false;
+//        }
         return true;
     }
 

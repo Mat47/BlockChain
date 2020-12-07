@@ -1,5 +1,6 @@
 package network;
 
+import app.Controller;
 import app.Node;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import ledger.Block;

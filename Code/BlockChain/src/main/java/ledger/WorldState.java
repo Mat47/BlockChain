@@ -14,7 +14,7 @@ public class WorldState
     private final Logger logger = LoggerFactory.getLogger(WorldState.class);
 
     private Map<String, Double> accounts;   // hashMap<address, balance>
-//    List<Wallet> accounts;
+    //    private List<Wallet>      accounts;
     private List<Transaction>   mempool;
 
     public WorldState()
@@ -45,6 +45,7 @@ public class WorldState
 
     /**
      * Fetches the address' account balance taking the mempool into consideration hence avoiding double-spend
+     *
      * @param address the account
      * @return address' balance
      */
@@ -60,6 +61,23 @@ public class WorldState
         }
         return balance;
     }
+
+//    public void addAccount(Wallet w)
+//    {
+//        accounts.add(w);
+//    }
+
+//    public Wallet fetchAccount(String address)
+//    {
+//        for (Wallet wallet : accounts)
+//        {
+//            if (wallet.getAddress().equals(address))
+//            {
+//                return wallet;
+//            }
+//        }
+//        return null;
+//    }
 
     public List<Transaction> getMempool()
     {
