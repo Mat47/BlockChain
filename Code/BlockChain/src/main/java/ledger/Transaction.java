@@ -4,10 +4,11 @@ import app.TxProposal;
 import util.Sha256Hasher;
 import util.SigKey;
 
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class Transaction
+public class Transaction implements Serializable
 {
     private TxProposal  txProposal;
     private SigKey      sigKey;

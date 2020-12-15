@@ -4,6 +4,7 @@ import ledger.Asset;
 import ledger.BlockHeader;
 import util.Sha256Hasher;
 
+import java.io.Serializable;
 import java.security.KeyPair;
 import java.security.PublicKey;
 import java.security.Signature;
@@ -11,13 +12,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
-public class Wallet
+public class Wallet implements Serializable
 {
     private Logger logger = Logger.getLogger(Wallet.class.getName());
 
     private KeyPair             keyPair;
     private String              address;
     private Map<Asset, Integer> balance;
+
+//    private List<Asset> assets
 //    private spendable;
 
     public Wallet()
@@ -30,7 +33,7 @@ public class Wallet
         this.keyPair = keyPair;
         this.address = Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
         this.balance = new HashMap<>();
-        balance.put(Asset.ETH, 32);  // adding initial assets for demo purposes
+//        balance.put(Asset.ETH, 32);  // adding initial assets for demo purposes
     }
 
     public byte[] sign(TxProposal txProp)
@@ -79,6 +82,13 @@ public class Wallet
     }
 
     //
+
+
+    public KeyPair getKeyPair()
+    {
+        return keyPair;
+    }
+
     public PublicKey getPub()
     {
         return keyPair.getPublic();

@@ -12,5 +12,7 @@ public enum MessageType
     TxEndorsement,
     TxSubmission,
 
+    Disconnect,
+
     NewBlock
 }

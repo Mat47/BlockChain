@@ -48,7 +48,7 @@ public class PortReceiver extends Thread
                 {
                     case PeerResponse:
                         logger.info("new peer response from " + message.getSender());
-                        PeerInfo.peers.add(message.getSender());
+                        NetworkInfo.peers.add(message.getSender());
 
                         // adds address to chain accounts
                         Controller.worldState.getAccounts().put(message.getSender().getAddress(), 100.);
@@ -121,9 +121,9 @@ public class PortReceiver extends Thread
                         TxProposal endorsedProposal = PacketHandler.parseTxProp(message);
 
                         // update endorsement (add sigKey of endorser)
-                        Set<SigKey> endorsements = PeerInfo.activeProposals.get(endorsedProposal);
+                        Set<SigKey> endorsements = NetworkInfo.activeProposals.get(endorsedProposal);
                         endorsements.add(message.getSigKey());
-                        PeerInfo.activeProposals.put(endorsedProposal, endorsements);
+                        NetworkInfo.activeProposals.put(endorsedProposal, endorsements);
                         break;
 
                     case TxSubmission:

@@ -33,7 +33,8 @@ public class PortSender
         Message<BlockHeader> msg    = new Message<>(MessageType.ChainSyncRequest, requester, blockHeader);
         byte[]               buffer = msg.serialize();
 
-        int toPort = PeerInfo.fetchRandPeer().getPort();
+        int toPort = NetworkInfo.fetchRandPeer(requester).getPort();
+        logger.info("sending sync request to {}...", toPort);
         DatagramPacket packet  = new DatagramPacket(buffer, buffer.length, InetAddress.getByName("localhost"), toPort);
         new DatagramSocket().send(packet);
     }

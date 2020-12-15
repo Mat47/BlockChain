@@ -4,9 +4,10 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import util.Sha256Hasher;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class BlockHeader
+public class BlockHeader implements Serializable
 {
     private int    height;
     private String merkleRoot;

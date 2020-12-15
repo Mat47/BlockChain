@@ -4,13 +4,14 @@ import accessPermission.Role;
 import network.Config;
 import util.Sha256Hasher;
 
+import java.io.Serializable;
 import java.security.PublicKey;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Node
+public class Node implements Serializable
 {
     private int       port;
     private String    username;
@@ -20,6 +21,12 @@ public class Node
     public Node()
     {
         // needed for (de)serialization (Jackson)
+    }
+
+    public Node(int nodePort, String username)
+    {
+        this.port = nodePort;
+        this.username = username;
     }
 
     public Node(int port, String username, PublicKey pub)

@@ -1,15 +1,17 @@
 package accessPermission;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.security.PublicKey;
 import java.util.*;
-import java.util.logging.Logger;
 
 /**
  * Lists (public keys of) network members, i.e. stores the permissioned identities and also their rights.
  */
 public class MembershipServiceProvider
 {
-    Logger logger = Logger.getLogger(MembershipServiceProvider.class.getName());
+    Logger logger = LoggerFactory.getLogger(MembershipServiceProvider.class);
 
     private Set<CertificateAuthority> acceptedCAs;
 
@@ -50,7 +52,7 @@ public class MembershipServiceProvider
     private boolean verifyId(PublicKey pubKey)
     {
         // external validation methods IRL
-        System.out.println("[MSP] Validating Digital Identity (PubKey)...complete.");
+        logger.info("[MSP] Validating Digital Identity (PubKey)...complete.");
         return true;
     }
 

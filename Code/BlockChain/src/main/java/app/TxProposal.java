@@ -5,9 +5,10 @@ import util.Sha256Hasher;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class TxProposal
+public class TxProposal implements Serializable
 {
     private String fromAddress;
     private String toAddress;

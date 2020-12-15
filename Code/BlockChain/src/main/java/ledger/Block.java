@@ -1,14 +1,16 @@
 package ledger;
 
+import util.Serializer;
 import util.SigKey;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Block
+public class Block implements Serializable
 {
     private BlockHeader       header;
     private List<Transaction> txs;
-    private SigKey ordererSig;
+    private SigKey            ordererSig;
 
     public Block()
     {

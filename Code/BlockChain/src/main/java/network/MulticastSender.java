@@ -31,7 +31,7 @@ public class MulticastSender
             byte[]  buffer = msg.serialize();
 
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
-            logger.info("Sending handshake request...");
+            logger.info("handshake request / discovering peers...");
             socket.send(packet);
 
         } catch (IOException e)
@@ -73,6 +73,28 @@ public class MulticastSender
             group = InetAddress.getByName(Config.multicastHost);
 
             Message msg    = new Message( MessageType.NewBlock, orderer, latestBlock.getHeader(), latestBlock.getTxs(), latestBlock.getOrdererSig());
+            byte[]  buffer = msg.serialize();
+
+            DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);
+            socket.send(packet);
+
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        } finally
+        {
+            socket.close();
+        }
+    }
+
+    public static void sendDisconnect(Node disconnecter)
+    {
+        try
+        {
+            socket = new DatagramSocket();
+            group = InetAddress.getByName(Config.multicastHost);
+
+            Message msg    = new Message( MessageType.Disconnect, disconnecter, null );
             byte[]  buffer = msg.serialize();
 
             DatagramPacket packet = new DatagramPacket(buffer, buffer.length, group, Config.multicastPort);

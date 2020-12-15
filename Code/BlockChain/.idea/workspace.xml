@@ -35,14 +35,42 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e11bc48c-4ee2-4e8a-90e7-67112241ef53" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/Deserializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/util/Serializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/CrunchifyTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/CrunchifyTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/SmartContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/SmartContract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/WorldState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/WorldState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accessPermission/MembershipServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accessPermission/MembershipServiceProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/accessPermission/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accessPermission/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/TxProposal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/TxProposal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/app/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Wallet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/BlockHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/BlockHeader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Blockchain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/MulticastReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MulticastReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/network/MulticastSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MulticastSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ledger/SmartContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/SmartContract.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ledger/WorldState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/WorldState.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/network/MulticastSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/MulticastSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PeerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/NetworkInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PortReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PortReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/PortSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PortSender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/SigKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/SigKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/accessPermission/MembershipServiceProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/accessPermission/MembershipServiceProvider.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/accessPermission/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/accessPermission/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Node.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/TxProposal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/TxProposal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/app/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Wallet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/BlockHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/BlockHeader.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Blockchain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Blockchain.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Transaction.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/PeerInfo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/PortSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/PortSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/SigKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/SigKey.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,8 +81,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -70,6 +98,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
@@ -199,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607352823288</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="see last commit">
+      <created>1607357900393</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1607357900393</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -232,6 +268,7 @@
     <MESSAGE value="Ordering/Mining, new Block broadcast, WorldState (balance) update" />
     <MESSAGE value="Chain (and WorldState) Synchronisation following peer discovery" />
     <MESSAGE value="addressed double-spend: endorsers add pending valid incoming tx proposals to local mempool" />
-    <option name="LAST_COMMIT_MESSAGE" value="addressed double-spend: endorsers add pending valid incoming tx proposals to local mempool" />
+    <MESSAGE value="see last commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="see last commit" />
   </component>
 </project>

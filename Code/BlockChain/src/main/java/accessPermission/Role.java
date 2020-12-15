@@ -1,6 +1,8 @@
 package accessPermission;
 
-public enum Role
+import java.io.Serializable;
+
+public enum Role implements Serializable
 {
     ADMIN,
     ORDERER,

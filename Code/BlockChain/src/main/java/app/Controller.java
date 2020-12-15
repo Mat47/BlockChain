@@ -8,9 +8,7 @@ import org.slf4j.LoggerFactory;
 import util.Explorer;
 import util.SigKey;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.security.KeyPair;
 import java.util.HashSet;
 
@@ -25,10 +23,10 @@ public class Controller
     public static Blockchain blockchain;
     public static WorldState worldState;
 
-    public static void launchApp(Node node, KeyPair keyPair) throws IOException, InterruptedException
+    public static void launchApp(Node node, KeyPair keyPair, Blockchain chain) throws IOException, InterruptedException
     {
         wallet = new Wallet(keyPair);
-        blockchain = new Blockchain();
+        blockchain = chain;
         worldState = new WorldState();
 
 //        JsonMapper mapper = new JsonMapper(wallet.getPub().getEncoded());
@@ -48,10 +46,16 @@ public class Controller
 
         //
         MulticastSender.requestHandshake(node);
-//        MulticastSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
-        Thread.sleep(400);  // to finish handshake, avoids exception (IllegalArgumentException: Bound must be positive) PeerInfo.peers size 0
+        //todo refactor handshake own thread
+        try {
+            Thread.sleep(1000);  // to finish handshake and initialize peers, avoids exception (IllegalArgumentException: Bound must be positive) PeerInfo.peers size 0
+        } catch (InterruptedException e)
+        {
+            e.printStackTrace();
+        }
+
         PortSender.requestChainSync(node, Controller.blockchain.getLatestBlock().getHeader());
-        Thread.sleep(400);  // to finish setup
+//        Thread.sleep(700);  // to finish setup
 
         //
         BufferedReader reader            = new BufferedReader(new InputStreamReader(System.in));
@@ -66,7 +70,7 @@ public class Controller
 
                 case "1":
                     System.out.println("- Peers ");
-                    for (Node peer : PeerInfo.getPeers())
+                    for (Node peer : NetworkInfo.getPeers())
                     {
                         System.out.println(peer);
                     }
@@ -78,27 +82,27 @@ public class Controller
                     break;
 
                 case "3":
-                    Explorer.print(blockchain, worldState);
+                    Explorer.print(Controller.blockchain, worldState);
                     break;
 
                 case "4":
                     TxProposal txProposal = TxProposal.createTxPropUI(node);
-                    PeerInfo.activeProposals.put(txProposal, new HashSet<>());
+                    NetworkInfo.activeProposals.put(txProposal, new HashSet<>());
                     // sign tx proposal
                     byte[] sig = wallet.sign(txProposal);
                     PortSender.proposeTx(node, txProposal, sig, wallet.getPub());
                     Thread.sleep(1100); // ...before checking if proposal was endorsed
-                    if (PeerInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size()/2)   //todo 70% endorsement policy
+                    if (NetworkInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size()/2)   //todo 70% endorsement policy
                     {
-                        logger.debug("EndorsementStatus " + PeerInfo.activeProposals);
+                        logger.debug("EndorsementStatus " + NetworkInfo.activeProposals);
                         Transaction tx = new Transaction(txProposal, new SigKey(sig, wallet.getPub()));
-                        tx.setEndorsements(PeerInfo.activeProposals.get(txProposal));
+                        tx.setEndorsements(NetworkInfo.activeProposals.get(txProposal));
                         PortSender.submitTxProposal(node, tx);
                     } else
                     {
                         logger.info("missing endorsements, forfeiting proposal.");
                     }
-                    PeerInfo.activeProposals.remove(txProposal);
+                    NetworkInfo.activeProposals.remove(txProposal);
                     break;
 
                 case "9":
@@ -127,5 +131,8 @@ public class Controller
             System.out.print("> ");
             userMenuSelection = reader.readLine();
         }
+
+        MulticastSender.sendDisconnect(node);   // informs peers about disconnect
     }
+
 }

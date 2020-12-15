@@ -4,13 +4,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import util.SigKey;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 /**
  * The data structure containing the intertwined blocks.
  */
-public class Blockchain
+public class Blockchain implements Serializable
 {
     private final Logger logger = LoggerFactory.getLogger(Blockchain.class);
 
