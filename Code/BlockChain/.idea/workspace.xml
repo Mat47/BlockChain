@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ArtifactsWorkspaceSettings">
     <artifacts-to-build>
-      <artifact name="BlockChain" />
+      <artifact name="BlockChain:jar" />
     </artifacts-to-build>
   </component>
   <component name="AutoImportSettings">
@@ -35,42 +35,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e11bc48c-4ee2-4e8a-90e7-67112241ef53" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/Deserializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/util/Serializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/artifacts/BlockChain_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/MANIFEST.MF" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/log/CrunchifyTest.log" beforeDir="false" afterPath="$PROJECT_DIR$/log/CrunchifyTest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accessPermission/MembershipServiceProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accessPermission/MembershipServiceProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/accessPermission/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/accessPermission/Role.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/TxProposal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/TxProposal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/app/Wallet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/app/Wallet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Block.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Block.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Asset.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Asset.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ledger/BlockHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/BlockHeader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Blockchain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Blockchain.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/network/MessageType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MessageType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/MerkleTree.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/MerkleTree.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/SmartContract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/SmartContract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ledger/WorldState.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ledger/WorldState.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/network/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/network/MulticastReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MulticastReceiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/network/MulticastSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/MulticastSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/network/PeerInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/NetworkInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/network/PortReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PortReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/network/PortSender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/network/PortSender.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/util/SigKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/SigKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/accessPermission/MembershipServiceProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/accessPermission/MembershipServiceProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/accessPermission/Role.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/accessPermission/Role.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/util/Explorer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/util/Explorer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/ledger/MerkleTreeTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/ledger/MerkleTreeTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/util/JsonMapperTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/util/JsonMapperTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/app/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Node.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/TxProposal.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/TxProposal.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/app/Wallet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/app/Wallet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Block.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Block.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Asset.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Asset.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/ledger/BlockHeader.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/BlockHeader.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Blockchain.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Blockchain.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/ledger/Transaction.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/Transaction.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/network/PeerInfo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/network/PortSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/PortSender.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/util/SigKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/SigKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/MerkleTree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/MerkleTree.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/SmartContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/SmartContract.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ledger/WorldState.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ledger/WorldState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/Config.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/Config.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/MessageType.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/MessageType.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/MulticastReceiver$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/MulticastReceiver$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/MulticastReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/MulticastReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/MulticastSender.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/MulticastSender.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/network/PortReceiver.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/network/PortReceiver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/util/Explorer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/util/Explorer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/ledger/MerkleTreeTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/ledger/MerkleTreeTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/util/JsonMapperTest$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/util/JsonMapperTest$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/util/JsonMapperTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/util/JsonMapperTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../../README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +106,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
@@ -178,9 +180,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.MerkleTreeTest" />
         <item itemvalue="JUnit.JsonMapperTest" />
         <item itemvalue="JUnit.JsonMapperTest.deserializeList" />
-        <item itemvalue="JUnit.MerkleTreeTest" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1607357900393</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="debugged chain syncing&#10;impl persistent/local storage">
+      <created>1608061079928</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1608061079929</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -269,6 +278,7 @@
     <MESSAGE value="Chain (and WorldState) Synchronisation following peer discovery" />
     <MESSAGE value="addressed double-spend: endorsers add pending valid incoming tx proposals to local mempool" />
     <MESSAGE value="see last commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="see last commit" />
+    <MESSAGE value="debugged chain syncing&#10;impl persistent/local storage" />
+    <option name="LAST_COMMIT_MESSAGE" value="debugged chain syncing&#10;impl persistent/local storage" />
   </component>
 </project>

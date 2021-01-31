@@ -76,9 +76,9 @@ public class Controller
                     }
                     break;
 
-                case "2":
-                    System.out.println(wallet);
-                    //todo display wallet
+                case "2":   // displays wallet info
+                    System.out.println("Account/Address: " + wallet.getAddress());
+                    wallet.getAssets().forEach((asset, balance) -> System.out.println(asset + ":\t" + balance));
                     break;
 
                 case "3":
@@ -86,13 +86,13 @@ public class Controller
                     break;
 
                 case "4":
-                    TxProposal txProposal = TxProposal.createTxPropUI(node);
+                    TxProposal txProposal = TxProposal.createTxPropUI(node, wallet);
                     NetworkInfo.activeProposals.put(txProposal, new HashSet<>());
                     // sign tx proposal
                     byte[] sig = wallet.sign(txProposal);
                     PortSender.proposeTx(node, txProposal, sig, wallet.getPub());
                     Thread.sleep(1100); // ...before checking if proposal was endorsed
-                    if (NetworkInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size()/2)   //todo 70% endorsement policy
+                    if (NetworkInfo.activeProposals.get(txProposal).size() >= Config.endorsers.size()/2)   //50% endorsement policy
                     {
                         logger.debug("EndorsementStatus " + NetworkInfo.activeProposals);
                         Transaction tx = new Transaction(txProposal, new SigKey(sig, wallet.getPub()));

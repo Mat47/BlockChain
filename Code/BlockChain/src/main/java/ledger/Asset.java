@@ -3,8 +3,7 @@ package ledger;
 public enum Asset
 {
     BTC("Bitcoin", 20000),
-    ETH("Ethereum", 500),
-    Prop0815("PropertyToken", 12500);
+    T0815("Property0815", 12500);
 
     private String name;
     private double price;

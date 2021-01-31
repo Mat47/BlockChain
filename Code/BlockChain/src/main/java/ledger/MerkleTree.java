@@ -1,6 +1,5 @@
 package ledger;
 
-import app.TxProposal;
 import util.Sha256Hasher;
 
 import java.util.ArrayList;
@@ -59,7 +58,6 @@ public class MerkleTree
         String mergedHash = leftHash + rightHash;
         return Sha256Hasher.hash( mergedHash );
     }
-
 
     public List<String> getTransactionHashes()
     {

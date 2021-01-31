@@ -27,9 +27,9 @@ public class Explorer
         }
 
         System.out.println();
-        for (String key : ws.getAccounts().keySet())
+        for (String key : ws.getBalances().keySet())
         {
-            System.out.println("Address: " + key + "\tBalance: " + ws.getAccounts().get(key));
+            System.out.println("Address: " + key + " | Balance: " + ws.getBalances().get(key));
         }
     }
 }

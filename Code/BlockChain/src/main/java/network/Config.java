@@ -12,8 +12,7 @@ public class Config
 
     public static final Set<Integer> admins    = new HashSet<>(Arrays.asList(5000));
     public static final Set<Integer> orderers  = new HashSet<>(Arrays.asList(5000));
-    public static final Set<Integer> endorsers = new HashSet<>(Arrays.asList(5010, 5011));
-//    public static final Set<Integer> endorsers = new HashSet<>(Arrays.asList(5010, 5011, 5012, 5013));
+    public static final Set<Integer> endorsers = new HashSet<>(Arrays.asList(5010, 5011, 5012));
 
     public static int getRandOrderer()
     {

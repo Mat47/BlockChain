@@ -1,5 +1,6 @@
 package app;
 
+import ledger.Asset;
 import util.Sha256Hasher;
 
 import java.io.BufferedReader;
@@ -12,20 +13,22 @@ public class TxProposal implements Serializable
 {
     private String fromAddress;
     private String toAddress;
-    private double amount;
+    private Asset  typeOfAsset;
+    private int    amount;
 
     public TxProposal()
     {
     }
 
-    public TxProposal(String fromAddress, String toAddress, double amount)
+    public TxProposal(String fromAddress, String toAddress, Asset asset, int amount)
     {
         this.fromAddress = fromAddress;
         this.toAddress = toAddress;
+        this.typeOfAsset = asset;
         this.amount = amount;
     }
 
-    public static TxProposal createTxPropUI(Node user) throws IOException
+    public static TxProposal createTxPropUI(Node user, Wallet wallet) throws IOException
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
@@ -36,14 +39,17 @@ public class TxProposal implements Serializable
             receiver = reader.readLine();
         }
 
-        double amount = 0;
+        Asset asset = null;
+        //todo retrieve transferable assets from wallet
+
+        int amount = 0;
         while (amount <= 0)
         {
             System.out.print("\tenter amount > ");
-            amount = Double.parseDouble(reader.readLine());
+            amount = Integer.parseInt(reader.readLine());
         }
 
-        return new TxProposal(user.getAddress(), receiver, amount);
+        return new TxProposal(user.getAddress(), receiver, asset, amount);
     }
 
     public String stringify()

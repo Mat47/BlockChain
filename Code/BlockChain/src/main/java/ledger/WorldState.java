@@ -1,6 +1,5 @@
 package ledger;
 
-import app.Wallet;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -13,19 +12,20 @@ public class WorldState
 {
     private final Logger logger = LoggerFactory.getLogger(WorldState.class);
 
-    private Map<String, Double> accounts;   // hashMap<address, balance>
-    //    private List<Wallet>      accounts;
+    private Map<String, Double> balances;   // hashMap<address, balance>
+    private Map<String, Asset> assets;
+
     private List<Transaction>   mempool;
 
     public WorldState()
     {
-        this.accounts = new HashMap<>();
+        this.balances = new HashMap<>();
         this.mempool = new ArrayList<>();
     }
 
-    public Map<String, Double> getAccounts()
+    public Map<String, Double> getBalances()
     {
-        return accounts;
+        return balances;
     }
 
     public void update(List<Transaction> mempool)
@@ -36,8 +36,8 @@ public class WorldState
             String from   = tx.getTxProposal().getFromAddress();
             String to     = tx.getTxProposal().getToAddress();
 
-            accounts.put(from, accounts.get(from) - amount);
-            accounts.put(to, accounts.get(to) + amount);
+            balances.put(from, balances.get(from) - amount);
+            balances.put(to, balances.get(to) + amount);
         }
         this.mempool.clear();
         logger.info("Updated world state, mempool cleared.");
@@ -51,7 +51,7 @@ public class WorldState
      */
     public double fetchBalance(String address)
     {
-        double balance = accounts.get(address);
+        double balance = balances.get(address);
         for (Transaction tx : mempool)
         {
             if (tx.getTxProposal().getFromAddress().equals(address))

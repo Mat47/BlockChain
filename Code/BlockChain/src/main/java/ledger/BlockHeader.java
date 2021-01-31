@@ -1,7 +1,5 @@
 package ledger;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import util.Sha256Hasher;
 
 import java.io.Serializable;

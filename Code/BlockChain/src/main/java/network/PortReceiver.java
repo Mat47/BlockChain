@@ -51,7 +51,7 @@ public class PortReceiver extends Thread
                         NetworkInfo.peers.add(message.getSender());
 
                         // adds address to chain accounts
-                        Controller.worldState.getAccounts().put(message.getSender().getAddress(), 100.);
+                        Controller.worldState.getBalances().put(message.getSender().getAddress(), 100.);
                         break;
 
                     case ChainSyncRequest:

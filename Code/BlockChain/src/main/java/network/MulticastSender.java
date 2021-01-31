@@ -1,12 +1,8 @@
 package network;
 
-import app.Controller;
 import app.Node;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import ledger.Block;
-import ledger.BlockHeader;
 import org.slf4j.LoggerFactory;
-import util.SigKey;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

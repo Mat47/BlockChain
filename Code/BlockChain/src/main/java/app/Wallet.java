@@ -12,13 +12,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.logging.Logger;
 
+/**
+ * Public Key Cryptography Reference: https://docs.oracle.com/javase/tutorial/security/apisign/index.html
+ */
 public class Wallet implements Serializable
 {
     private Logger logger = Logger.getLogger(Wallet.class.getName());
 
     private KeyPair             keyPair;
     private String              address;
-    private Map<Asset, Integer> balance;
+    private Map<Asset, Integer> assets;
 
 //    private List<Asset> assets
 //    private spendable;
@@ -32,8 +35,12 @@ public class Wallet implements Serializable
     {
         this.keyPair = keyPair;
         this.address = Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
-        this.balance = new HashMap<>();
+        this.assets = new HashMap<>();
 //        balance.put(Asset.ETH, 32);  // adding initial assets for demo purposes
+        for (Asset eachAsset : Asset.values())
+        {
+            assets.put(eachAsset, 0);
+        }
     }
 
     public byte[] sign(TxProposal txProp)
@@ -77,7 +84,7 @@ public class Wallet implements Serializable
         return "Wallet{" +
                 //"keyPair=" + keyPair +
                 ", address='" + address + '\'' +
-                ", balance=" + balance +
+                ", balance=" + assets +
                 '}';
     }
 
@@ -99,8 +106,8 @@ public class Wallet implements Serializable
         return Sha256Hasher.hash(new String(keyPair.getPublic().getEncoded()));
     }
 
-    public Map<Asset, Integer> getBalance()
+    public Map<Asset, Integer> getAssets()
     {
-        return balance;
+        return assets;
     }
 }

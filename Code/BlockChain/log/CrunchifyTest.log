@@ -5130,3 +5130,286 @@
 2020-12-15 20:36:25 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=2, merkleRoot='ffc14827c839627adccc15dbdf9a1a54780535d417f70d8806e6dd622fc5da90', preHash='e56e8ce8821ca12d2d5da4e3b3d89c38b5d3cc644601c3d70e42e5825f4f24b6', timestamp=1608059844599, hash='6c66551142d10c7adc0952cffff93a08bb4a65f89cddad6ff4ed77deddaea2d5'}.
 2020-12-15 20:36:25 [Thread-1] ERROR Blockchain:64 - There is no block with # 6c66551142d10c7adc0952cffff93a08bb4a65f89cddad6ff4ed77deddaea2d5.
 2020-12-15 20:36:25 [Thread-1] WARN  PortReceiver:67 - requester sent invalid or corrupted block.
+2020-12-17 17:21:15 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:21:15 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 17:21:15 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 17:21:15 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2020-12-17 17:21:15 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 17:21:15 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='dca16e763226592a8857d23762c3beeeadbb1efd28325ad6c0007876e519e21b'}.
+2020-12-17 17:21:15 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='dca16e763226592a8857d23762c3beeeadbb1efd28325ad6c0007876e519e21b'}
+2020-12-17 17:21:16 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-17 17:21:48 [main] INFO  Controller:103 - missing endorsements, forfeiting proposal.
+2020-12-17 17:21:57 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:21:57 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 17:21:57 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 17:21:57 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5010) started.
+2020-12-17 17:21:58 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 17:21:58 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='lis', rights=[PEER, ENDORSER], address='fc682055bd2071c99e955ef7f97957dae74fa4589a2389e5685af046f8adea73'}.
+2020-12-17 17:21:58 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ORDERER, ADMIN, PEER], address='dca16e763226592a8857d23762c3beeeadbb1efd28325ad6c0007876e519e21b'}
+2020-12-17 17:21:58 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='lis', rights=[PEER, ENDORSER], address='fc682055bd2071c99e955ef7f97957dae74fa4589a2389e5685af046f8adea73'}.
+2020-12-17 17:21:58 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='lis', rights=[PEER, ENDORSER], address='fc682055bd2071c99e955ef7f97957dae74fa4589a2389e5685af046f8adea73'}
+2020-12-17 17:21:59 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-17 17:21:59 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2020-12-17 17:21:59 [Thread-1] INFO  PortReceiver:78 - Node{port=5010, username='lis', rights=[PEER, ENDORSER], address='fc682055bd2071c99e955ef7f97957dae74fa4589a2389e5685af046f8adea73'}'s chain is up to date.
+2020-12-17 17:21:59 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2020-12-17 17:23:35 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:23:36 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 17:23:36 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 17:23:36 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2020-12-17 17:23:36 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 17:23:36 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[ORDERER, ADMIN, PEER], address='f1cc9d03d8dd1efc82e18103cf0d14884bfb769c3589a9ac894fd676bb115766'}.
+2020-12-17 17:23:36 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='f1cc9d03d8dd1efc82e18103cf0d14884bfb769c3589a9ac894fd676bb115766'}.
+2020-12-17 17:23:36 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='f1cc9d03d8dd1efc82e18103cf0d14884bfb769c3589a9ac894fd676bb115766'}
+2020-12-17 17:23:37 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-17 17:32:07 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:32:13 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:32:23 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:32:38 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:56:49 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:56:58 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 17:56:58 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 17:56:58 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 17:56:58 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2020-12-17 17:56:58 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 17:56:58 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='4524ad633de245fec5e8289297ed905e181962338edcd62e2a09fc5bcc771e4c'}.
+2020-12-17 17:56:58 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='4524ad633de245fec5e8289297ed905e181962338edcd62e2a09fc5bcc771e4c'}
+2020-12-17 17:56:59 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-17 18:07:10 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 18:07:10 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 18:07:10 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 18:07:10 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5010) started.
+2020-12-17 18:07:10 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 18:07:10 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='lis', rights=[ENDORSER, PEER], address='af6f90fa3a8b81f2b656b3ec8613351ba4b1a0bc17bea24765474903db879db7'}.
+2020-12-17 18:07:10 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ADMIN, PEER, ORDERER], address='4524ad633de245fec5e8289297ed905e181962338edcd62e2a09fc5bcc771e4c'}
+2020-12-17 18:07:10 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='lis', rights=[PEER, ENDORSER], address='af6f90fa3a8b81f2b656b3ec8613351ba4b1a0bc17bea24765474903db879db7'}.
+2020-12-17 18:07:10 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='lis', rights=[PEER, ENDORSER], address='af6f90fa3a8b81f2b656b3ec8613351ba4b1a0bc17bea24765474903db879db7'}
+2020-12-17 18:07:11 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-17 18:07:11 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2020-12-17 18:07:11 [Thread-1] INFO  PortReceiver:78 - Node{port=5010, username='lis', rights=[ENDORSER, PEER], address='af6f90fa3a8b81f2b656b3ec8613351ba4b1a0bc17bea24765474903db879db7'}'s chain is up to date.
+2020-12-17 18:07:11 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2020-12-17 19:41:37 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 19:41:37 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 19:41:37 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 19:41:37 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5010) started.
+2020-12-17 19:41:37 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 19:41:37 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='lisa', rights=[PEER, ENDORSER], address='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce'}.
+2020-12-17 19:41:37 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='lisa', rights=[PEER, ENDORSER], address='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce'}
+2020-12-17 19:41:38 [main] INFO  PortSender:37 - sending sync request to 5010...
+2020-12-17 19:41:41 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-17 19:41:41 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-17 19:41:41 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-17 19:41:41 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2020-12-17 19:41:41 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-17 19:41:41 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00'}.
+2020-12-17 19:41:41 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce'}
+2020-12-17 19:41:41 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00'}.
+2020-12-17 19:41:41 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00'}
+2020-12-17 19:41:42 [main] INFO  PortSender:37 - sending sync request to 5010...
+2020-12-17 19:41:42 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2020-12-17 19:41:42 [Thread-1] INFO  PortReceiver:78 - Node{port=5000, username='mat', rights=[PEER, ADMIN, ORDERER], address='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00'}'s chain is up to date.
+2020-12-17 19:41:42 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2020-12-17 19:41:58 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00, toAddress=dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce, amount=10.0}
+2020-12-17 19:41:58 [Thread-1] INFO  SmartContract:117 - {fromAddress='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00', toAddress='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce', amount=10} => SigVerification true
+2020-12-17 19:41:58 [Thread-1] INFO  PortReceiver:112 - endorsing proposal; added to mempool
+2020-12-17 19:41:58 [Thread-1] INFO  PortReceiver:120 - incoming TX Endorsement Message{msgType=TxEndorsement, sender=Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce'}, payload={fromAddress=efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00, toAddress=dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce, amount=10.0}, payload2=null, sigKey=util.SigKey@75c58eac}
+2020-12-17 19:42:00 [Thread-1] INFO  PortReceiver:131 - incoming TX Submission Transaction{txProposal={fromAddress='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00', toAddress='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce', amount=10}, sigKey=util.SigKey@5ec2443b, txId='11a707de3c73ecde9427dc72fe69165aa9cfc992b6733b99c964165f89adf5ee', endorsements=[util.SigKey@39a81873]}
+2020-12-17 19:42:00 [Thread-1] INFO  SmartContract:117 - {fromAddress='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00', toAddress='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce', amount=10} => SigVerification true
+2020-12-17 19:42:00 [Thread-1] INFO  SmartContract:117 - {fromAddress='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00', toAddress='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce', amount=10} => SigVerification true
+2020-12-17 19:42:02 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 16e25f4b9d4a8aa6cdc9d5944f427c1b15ba9f55dd5bfa532defdf90e0e8f103.
+2020-12-17 19:42:02 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 16e25f4b9d4a8aa6cdc9d5944f427c1b15ba9f55dd5bfa532defdf90e0e8f103.
+2020-12-17 19:42:02 [Thread-0] INFO  SmartContract:117 - BlockHeader{height=1, merkleRoot='b27203a2d05e4eec8afd3f94b2b29186565a84ba43149ab2d671483c35ffc488', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1608230522360, hash='16e25f4b9d4a8aa6cdc9d5944f427c1b15ba9f55dd5bfa532defdf90e0e8f103'} => SigVerification true
+2020-12-17 19:42:02 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='b27203a2d05e4eec8afd3f94b2b29186565a84ba43149ab2d671483c35ffc488', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1608230522360, hash='16e25f4b9d4a8aa6cdc9d5944f427c1b15ba9f55dd5bfa532defdf90e0e8f103'}, TXs=[Transaction{txProposal={fromAddress='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00', toAddress='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce', amount=10}, sigKey=util.SigKey@42bc3519, txId='11a707de3c73ecde9427dc72fe69165aa9cfc992b6733b99c964165f89adf5ee', endorsements=[util.SigKey@571dc7e8]}]} to local chain.
+2020-12-17 19:42:02 [Thread-0] INFO  WorldState:42 - Updated world state, mempool cleared.
+2020-12-17 19:42:02 [Thread-0] INFO  SmartContract:117 - BlockHeader{height=1, merkleRoot='b27203a2d05e4eec8afd3f94b2b29186565a84ba43149ab2d671483c35ffc488', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1608230522360, hash='16e25f4b9d4a8aa6cdc9d5944f427c1b15ba9f55dd5bfa532defdf90e0e8f103'} => SigVerification true
+2020-12-17 19:42:02 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='b27203a2d05e4eec8afd3f94b2b29186565a84ba43149ab2d671483c35ffc488', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1608230522360, hash='16e25f4b9d4a8aa6cdc9d5944f427c1b15ba9f55dd5bfa532defdf90e0e8f103'}, TXs=[Transaction{txProposal={fromAddress='efab7486ee1a43b186df4cf4b6b7bdd9054999b9b1a0b61dea5a1f5c7bbdab00', toAddress='dd671ab8ce3b3522fd951c34478990298b74d9e1e8ab1ea3433d5df84baadbce', amount=10}, sigKey=util.SigKey@597b4da6, txId='11a707de3c73ecde9427dc72fe69165aa9cfc992b6733b99c964165f89adf5ee', endorsements=[util.SigKey@48e0c7d5]}]} to local chain.
+2020-12-17 19:42:02 [Thread-0] INFO  WorldState:42 - Updated world state, mempool cleared.
+2020-12-30 17:06:39 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-30 17:06:39 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-30 17:06:39 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-30 17:06:39 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2020-12-30 17:06:39 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-30 17:06:39 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='hansi', rights=[PEER, ADMIN, ORDERER], address='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4'}.
+2020-12-30 17:06:39 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='hansi', rights=[PEER, ADMIN, ORDERER], address='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4'}
+2020-12-30 17:06:40 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-30 17:15:07 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-30 17:15:07 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-30 17:15:07 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-30 17:15:07 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 6099) started.
+2020-12-30 17:15:07 [main] INFO  MulticastSender:34 - handshake request / discovering peers...
+2020-12-30 17:15:07 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=6099, username='lisa', rights=[PEER], address='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03'}.
+2020-12-30 17:15:07 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='hansi', rights=[ORDERER, PEER, ADMIN], address='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4'}
+2020-12-30 17:15:07 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=6099, username='lisa', rights=[PEER], address='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03'}.
+2020-12-30 17:15:07 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=6099, username='lisa', rights=[PEER], address='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03'}
+2020-12-30 17:15:08 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-30 17:15:08 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2020-12-30 17:15:08 [Thread-1] INFO  PortReceiver:78 - Node{port=6099, username='lisa', rights=[PEER], address='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03'}'s chain is up to date.
+2020-12-30 17:15:08 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2020-12-30 17:33:50 [main] INFO  Controller:103 - missing endorsements, forfeiting proposal.
+2020-12-30 17:34:03 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2020-12-30 17:34:03 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2020-12-30 17:34:03 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2020-12-30 17:34:03 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5010) started.
+2020-12-30 17:34:03 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2020-12-30 17:34:03 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='e71833de372a9f544744ead7c7c9cef561e9848a7116c9e56dc5d3d5a3754830'}.
+2020-12-30 17:34:03 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='e71833de372a9f544744ead7c7c9cef561e9848a7116c9e56dc5d3d5a3754830'}.
+2020-12-30 17:34:03 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=6099, username='lisa', rights=[PEER], address='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03'}
+2020-12-30 17:34:03 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='tim', rights=[PEER, ENDORSER], address='e71833de372a9f544744ead7c7c9cef561e9848a7116c9e56dc5d3d5a3754830'}.
+2020-12-30 17:34:03 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='hansi', rights=[ADMIN, PEER, ORDERER], address='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4'}
+2020-12-30 17:34:03 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='tim', rights=[PEER, ENDORSER], address='e71833de372a9f544744ead7c7c9cef561e9848a7116c9e56dc5d3d5a3754830'}
+2020-12-30 17:34:04 [main] INFO  PortSender:37 - sending sync request to 5000...
+2020-12-30 17:34:04 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2020-12-30 17:34:04 [Thread-1] INFO  PortReceiver:78 - Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='e71833de372a9f544744ead7c7c9cef561e9848a7116c9e56dc5d3d5a3754830'}'s chain is up to date.
+2020-12-30 17:34:04 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2020-12-30 17:34:08 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03, toAddress=ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4, amount=15.0}
+2020-12-30 17:34:08 [Thread-1] INFO  SmartContract:117 - {fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15} => SigVerification true
+2020-12-30 17:34:08 [Thread-1] INFO  PortReceiver:112 - endorsing proposal; added to mempool
+2020-12-30 17:34:08 [Thread-1] INFO  PortReceiver:120 - incoming TX Endorsement Message{msgType=TxEndorsement, sender=Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='e71833de372a9f544744ead7c7c9cef561e9848a7116c9e56dc5d3d5a3754830'}, payload={fromAddress=0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03, toAddress=ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4, amount=15.0}, payload2=null, sigKey=util.SigKey@7b1a62e1}
+2020-12-30 17:34:10 [Thread-1] INFO  PortReceiver:131 - incoming TX Submission Transaction{txProposal={fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15}, sigKey=util.SigKey@6116674b, txId='7691fdb59ae3ce54c5b2a58ebb315c9da66856caa9b6342273a442b314da4b2b', endorsements=[util.SigKey@7b87c5f6]}
+2020-12-30 17:34:10 [Thread-1] INFO  SmartContract:117 - {fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15} => SigVerification true
+2020-12-30 17:34:10 [Thread-1] INFO  SmartContract:117 - {fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15} => SigVerification true
+2020-12-30 17:35:10 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25.
+2020-12-30 17:35:10 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25.
+2020-12-30 17:35:10 [Thread-0] INFO  SmartContract:117 - BlockHeader{height=1, merkleRoot='fe429438c5c239bb18732d0389862d161eca8261cf08945d5b416888ddb2ebd0', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1609346110785, hash='5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25'} => SigVerification true
+2020-12-30 17:35:10 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='fe429438c5c239bb18732d0389862d161eca8261cf08945d5b416888ddb2ebd0', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1609346110785, hash='5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25'}, TXs=[Transaction{txProposal={fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15}, sigKey=util.SigKey@1283522, txId='7691fdb59ae3ce54c5b2a58ebb315c9da66856caa9b6342273a442b314da4b2b', endorsements=[util.SigKey@4197770d]}]} to local chain.
+2020-12-30 17:35:10 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.
+2020-12-30 17:35:10 [Thread-0] INFO  SmartContract:117 - BlockHeader{height=1, merkleRoot='fe429438c5c239bb18732d0389862d161eca8261cf08945d5b416888ddb2ebd0', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1609346110785, hash='5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25'} => SigVerification true
+2020-12-30 17:35:10 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='fe429438c5c239bb18732d0389862d161eca8261cf08945d5b416888ddb2ebd0', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1609346110785, hash='5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25'}, TXs=[Transaction{txProposal={fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15}, sigKey=util.SigKey@1e8af49e, txId='7691fdb59ae3ce54c5b2a58ebb315c9da66856caa9b6342273a442b314da4b2b', endorsements=[util.SigKey@7c39c178]}]} to local chain.
+2020-12-30 17:35:10 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.
+2020-12-30 17:35:10 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25.
+2020-12-30 17:35:10 [Thread-0] INFO  SmartContract:117 - BlockHeader{height=1, merkleRoot='fe429438c5c239bb18732d0389862d161eca8261cf08945d5b416888ddb2ebd0', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1609346110785, hash='5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25'} => SigVerification true
+2020-12-30 17:35:10 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='fe429438c5c239bb18732d0389862d161eca8261cf08945d5b416888ddb2ebd0', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1609346110785, hash='5956d6a85c69223d718473d54e8b953bcf2878d7cf3ba50a3a9f9c381a412a25'}, TXs=[Transaction{txProposal={fromAddress='0bce0002af78d8e219f6693adccbee7ca5048686c303ec12bb301f2e5ec16a03', toAddress='ccb89413658cdfce06515e57849c0e35fae633d08e89feb51225c637bde5f8b4', amount=15}, sigKey=util.SigKey@28d781e1, txId='7691fdb59ae3ce54c5b2a58ebb315c9da66856caa9b6342273a442b314da4b2b', endorsements=[util.SigKey@6d64e229]}]} to local chain.
+2020-12-30 17:35:10 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.
+2020-12-30 17:37:51 [main] INFO  Serializer:27 - created local user directory ./5010/
+2020-12-30 17:37:51 [main] INFO  Serializer:34 - user blockchain information locally saved at ./5010/
+2020-12-30 17:38:06 [main] INFO  Serializer:27 - created local user directory ./6099/
+2020-12-30 17:38:06 [main] INFO  Serializer:34 - user blockchain information locally saved at ./6099/
+2021-01-04 16:34:01 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-04 16:34:02 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-04 16:34:02 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-04 16:34:02 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2021-01-04 16:34:02 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-04 16:34:02 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[ADMIN, ORDERER, PEER], address='5b1442cc6d618acaf0db57c13b2f0694d09fc2d32a481589e61d5a694598885c'}.
+2021-01-04 16:34:02 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ADMIN, ORDERER, PEER], address='5b1442cc6d618acaf0db57c13b2f0694d09fc2d32a481589e61d5a694598885c'}
+2021-01-04 16:34:03 [main] INFO  PortSender:37 - sending sync request to 5000...
+2021-01-04 16:34:22 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-04 16:34:22 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-04 16:34:22 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-04 16:34:22 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5010) started.
+2021-01-04 16:34:22 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-04 16:34:22 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228'}.
+2021-01-04 16:34:22 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228'}
+2021-01-04 16:34:23 [main] INFO  PortSender:37 - sending sync request to 5010...
+2021-01-04 16:34:27 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-04 16:34:28 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-04 16:34:28 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-04 16:34:28 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2021-01-04 16:34:28 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-04 16:34:28 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='frank', rights=[ORDERER, PEER, ADMIN], address='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2'}.
+2021-01-04 16:34:28 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228'}
+2021-01-04 16:34:28 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='frank', rights=[ADMIN, ORDERER, PEER], address='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2'}.
+2021-01-04 16:34:28 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='frank', rights=[ADMIN, ORDERER, PEER], address='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2'}
+2021-01-04 16:34:29 [main] INFO  PortSender:37 - sending sync request to 5010...
+2021-01-04 16:34:29 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2021-01-04 16:34:29 [Thread-1] INFO  PortReceiver:78 - Node{port=5000, username='frank', rights=[ORDERER, PEER, ADMIN], address='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2'}'s chain is up to date.
+2021-01-04 16:34:29 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2021-01-04 16:34:48 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2, toAddress=7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228, amount=15.0}
+2021-01-04 16:34:48 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15} => SigVerification true
+2021-01-04 16:34:48 [Thread-1] INFO  PortReceiver:112 - endorsing proposal; added to mempool
+2021-01-04 16:34:48 [Thread-1] INFO  PortReceiver:120 - incoming TX Endorsement Message{msgType=TxEndorsement, sender=Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228'}, payload={fromAddress=d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2, toAddress=7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228, amount=15.0}, payload2=null, sigKey=util.SigKey@1aa4fd65}
+2021-01-04 16:34:50 [Thread-1] INFO  PortReceiver:131 - incoming TX Submission Transaction{txProposal={fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15}, sigKey=util.SigKey@1559a51a, txId='5c8ba7719f620f9caed77d7a08f201e56418476a255c4e3e4b41af9ac632dd1c', endorsements=[util.SigKey@2561da69]}
+2021-01-04 16:34:50 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15} => SigVerification true
+2021-01-04 16:34:50 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15} => SigVerification true
+2021-01-04 16:39:57 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2, toAddress=7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228, amount=456.0}
+2021-01-04 16:39:57 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=456} => SigVerification true
+2021-01-04 16:39:57 [Thread-1] ERROR SmartContract:83 - insufficient funds, proposal rejected.
+2021-01-04 16:39:58 [main] INFO  Controller:103 - missing endorsements, forfeiting proposal.
+2021-01-04 16:40:14 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2, toAddress=7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228, amount=15.0}
+2021-01-04 16:40:14 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15} => SigVerification true
+2021-01-04 16:40:14 [Thread-1] INFO  PortReceiver:112 - endorsing proposal; added to mempool
+2021-01-04 16:40:14 [Thread-1] INFO  PortReceiver:120 - incoming TX Endorsement Message{msgType=TxEndorsement, sender=Node{port=5010, username='lisa', rights=[ENDORSER, PEER], address='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228'}, payload={fromAddress=d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2, toAddress=7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228, amount=15.0}, payload2=null, sigKey=util.SigKey@55339fd6}
+2021-01-04 16:40:15 [Thread-1] INFO  PortReceiver:131 - incoming TX Submission Transaction{txProposal={fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15}, sigKey=util.SigKey@2603be31, txId='5c8ba7719f620f9caed77d7a08f201e56418476a255c4e3e4b41af9ac632dd1c', endorsements=[util.SigKey@7eaaa58b]}
+2021-01-04 16:40:15 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15} => SigVerification true
+2021-01-04 16:40:15 [Thread-1] INFO  SmartContract:117 - {fromAddress='d7da61c688d29e0280b9529c19f7557d3af01dd16a456cb977c4c522ad6334c2', toAddress='7f38b15ab0fcc3c7161e69242f547c04d8ac46565cb628dd4e73d6d83cb65228', amount=15} => SigVerification true
+2021-01-28 17:10:33 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-29 23:51:15 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-29 23:51:36 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-29 23:51:36 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-29 23:51:36 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-29 23:51:36 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5000) started.
+2021-01-29 23:51:36 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-29 23:51:36 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5000, username='mat', rights=[ADMIN, ORDERER, PEER], address='5b11299b862b692a789d13125776c523f813400551eaa8036423c9d366b1c2f7'}.
+2021-01-29 23:51:36 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ADMIN, ORDERER, PEER], address='5b11299b862b692a789d13125776c523f813400551eaa8036423c9d366b1c2f7'}
+2021-01-29 23:51:37 [main] INFO  PortSender:37 - sending sync request to 5000...
+2021-01-29 23:51:43 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-29 23:51:43 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-29 23:51:43 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-29 23:51:43 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5010) started.
+2021-01-29 23:51:43 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-29 23:51:43 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}.
+2021-01-29 23:51:43 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ADMIN, ORDERER, PEER], address='5b11299b862b692a789d13125776c523f813400551eaa8036423c9d366b1c2f7'}
+2021-01-29 23:51:43 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}.
+2021-01-29 23:51:43 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}
+2021-01-29 23:51:44 [main] INFO  PortSender:37 - sending sync request to 5000...
+2021-01-29 23:51:44 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2021-01-29 23:51:44 [Thread-1] INFO  PortReceiver:78 - Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}'s chain is up to date.
+2021-01-29 23:51:44 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2021-01-29 23:51:53 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-29 23:51:53 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-29 23:51:53 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-29 23:51:53 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5011) started.
+2021-01-29 23:51:54 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-29 23:51:54 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}.
+2021-01-29 23:51:54 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}.
+2021-01-29 23:51:54 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ADMIN, PEER, ORDERER], address='5b11299b862b692a789d13125776c523f813400551eaa8036423c9d366b1c2f7'}
+2021-01-29 23:51:54 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}.
+2021-01-29 23:51:54 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}
+2021-01-29 23:51:54 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}
+2021-01-29 23:51:55 [main] INFO  PortSender:37 - sending sync request to 5010...
+2021-01-29 23:51:55 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2021-01-29 23:51:55 [Thread-1] INFO  PortReceiver:78 - Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}'s chain is up to date.
+2021-01-29 23:51:55 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2021-01-29 23:52:04 [main] INFO  CertificateAuthority:32 - Issuing new digital ID (KeyPair).
+2021-01-29 23:52:04 [main] INFO  MembershipServiceProvider:55 - [MSP] Validating Digital Identity (PubKey)...complete.
+2021-01-29 23:52:04 [Thread-0] INFO  MulticastReceiver:30 - Thread (for receiving multicasts) started.
+2021-01-29 23:52:04 [Thread-1] INFO  PortReceiver:33 - Thread (for receiving packets on port 5877) started.
+2021-01-29 23:52:04 [main] INFO  MulticastSender:30 - handshake request / discovering peers...
+2021-01-29 23:52:04 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5877, username='frnak', rights=[PEER], address='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263'}.
+2021-01-29 23:52:04 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5877, username='frnak', rights=[PEER], address='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263'}.
+2021-01-29 23:52:04 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5877, username='frnak', rights=[PEER], address='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263'}.
+2021-01-29 23:52:04 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5000, username='mat', rights=[ORDERER, PEER, ADMIN], address='5b11299b862b692a789d13125776c523f813400551eaa8036423c9d366b1c2f7'}
+2021-01-29 23:52:04 [Thread-0] INFO  MulticastReceiver:53 - incoming peer discovery from Node{port=5877, username='frnak', rights=[PEER], address='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263'}.
+2021-01-29 23:52:04 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}
+2021-01-29 23:52:04 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}
+2021-01-29 23:52:04 [Thread-1] INFO  PortReceiver:50 - new peer response from Node{port=5877, username='frnak', rights=[PEER], address='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263'}
+2021-01-29 23:52:05 [main] INFO  PortSender:37 - sending sync request to 5010...
+2021-01-29 23:52:05 [Thread-1] INFO  PortReceiver:62 - incoming chain sync request, BlockHeader{height=0, merkleRoot='Genesis', preHash='null', timestamp=1337, hash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301'}.
+2021-01-29 23:52:05 [Thread-1] INFO  PortReceiver:78 - Node{port=5877, username='frnak', rights=[PEER], address='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263'}'s chain is up to date.
+2021-01-29 23:52:05 [Thread-1] INFO  PortReceiver:97 - Sync response contains no block, local chain is up to date.
+2021-01-29 23:53:35 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263, toAddress=6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f, amount=15.0}
+2021-01-29 23:53:35 [Thread-1] INFO  PortReceiver:108 - incoming TX Proposal {fromAddress=36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263, toAddress=6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f, amount=15.0}
+2021-01-29 23:53:35 [Thread-1] INFO  SmartContract:118 - {fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15} => SigVerification true
+2021-01-29 23:53:35 [Thread-1] INFO  PortReceiver:112 - endorsing proposal; added to mempool
+2021-01-29 23:53:36 [Thread-1] INFO  PortReceiver:120 - incoming TX Endorsement Message{msgType=TxEndorsement, sender=Node{port=5010, username='tim', rights=[ENDORSER, PEER], address='336f716ef07c717af8a36d4d4d30e743c31d28448c7aaae569e233c01742df80'}, payload={fromAddress=36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263, toAddress=6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f, amount=15.0}, payload2=null, sigKey=util.SigKey@5e518c80}
+2021-01-29 23:53:36 [Thread-1] INFO  SmartContract:118 - {fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15} => SigVerification true
+2021-01-29 23:53:36 [Thread-1] INFO  PortReceiver:112 - endorsing proposal; added to mempool
+2021-01-29 23:53:36 [Thread-1] INFO  PortReceiver:120 - incoming TX Endorsement Message{msgType=TxEndorsement, sender=Node{port=5011, username='lisa', rights=[ENDORSER, PEER], address='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f'}, payload={fromAddress=36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263, toAddress=6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f, amount=15.0}, payload2=null, sigKey=util.SigKey@97c06fa}
+2021-01-29 23:53:37 [Thread-1] INFO  PortReceiver:131 - incoming TX Submission Transaction{txProposal={fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15}, sigKey=util.SigKey@740fa49b, txId='ca1376786a8d94d455ec3926e03a31bcad6d9d454ad02707c9542afdb97617e3', endorsements=[util.SigKey@5ed856d, util.SigKey@75e80537]}
+2021-01-29 23:53:37 [Thread-1] INFO  SmartContract:118 - {fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15} => SigVerification true
+2021-01-29 23:53:37 [Thread-1] INFO  SmartContract:118 - {fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15} => SigVerification true
+2021-01-29 23:53:37 [Thread-1] INFO  SmartContract:118 - {fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15} => SigVerification true
+2021-01-29 23:54:14 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884.
+2021-01-29 23:54:14 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884.
+2021-01-29 23:54:14 [Thread-0] INFO  SmartContract:118 - BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'} => SigVerification true
+2021-01-29 23:54:14 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'}, TXs=[Transaction{txProposal={fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15}, sigKey=util.SigKey@425154e5, txId='ca1376786a8d94d455ec3926e03a31bcad6d9d454ad02707c9542afdb97617e3', endorsements=[util.SigKey@5d2a81b8, util.SigKey@7631b56d]}]} to local chain.
+2021-01-29 23:54:14 [Thread-0] INFO  SmartContract:118 - BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'} => SigVerification true
+2021-01-29 23:54:14 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.
+2021-01-29 23:54:14 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'}, TXs=[Transaction{txProposal={fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15}, sigKey=util.SigKey@7bc0b96f, txId='ca1376786a8d94d455ec3926e03a31bcad6d9d454ad02707c9542afdb97617e3', endorsements=[util.SigKey@51c934cb, util.SigKey@2a28763e]}]} to local chain.
+2021-01-29 23:54:14 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.
+2021-01-29 23:54:14 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884.
+2021-01-29 23:54:14 [Thread-0] INFO  MulticastReceiver:65 - receiving new Block # 06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884.
+2021-01-29 23:54:14 [Thread-0] INFO  SmartContract:118 - BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'} => SigVerification true
+2021-01-29 23:54:14 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'}, TXs=[Transaction{txProposal={fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15}, sigKey=util.SigKey@46328c7b, txId='ca1376786a8d94d455ec3926e03a31bcad6d9d454ad02707c9542afdb97617e3', endorsements=[util.SigKey@2164f3b1, util.SigKey@738bc3d0]}]} to local chain.
+2021-01-29 23:54:14 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.
+2021-01-29 23:54:14 [Thread-0] INFO  SmartContract:118 - BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'} => SigVerification true
+2021-01-29 23:54:14 [Thread-0] INFO  Blockchain:34 - Added new Block{header=BlockHeader{height=1, merkleRoot='76b8b05f5319b7b28a2feb9c7025726842b7f6b1622b236ebce3f638333c8828', preHash='d34619cc870635844a39e80b68766acb0a06fa171ee81a893002efa95c53f301', timestamp=1611960854245, hash='06f849b05202eb019e01e6e92b45fbe3fd524bea71710872625e0db7b8314884'}, TXs=[Transaction{txProposal={fromAddress='36baebb8b2cff9121f290eab8185e567ed5a6923edb92390ed168ec61d2e1263', toAddress='6c1ff78c5e23576225f1bb68f1309e5916456b97ef1690467591e89971b6933f', amount=15}, sigKey=util.SigKey@15c4f3bd, txId='ca1376786a8d94d455ec3926e03a31bcad6d9d454ad02707c9542afdb97617e3', endorsements=[util.SigKey@1a52e711, util.SigKey@1cc9cc6]}]} to local chain.
+2021-01-29 23:54:14 [Thread-0] INFO  WorldState:43 - Updated world state, mempool cleared.

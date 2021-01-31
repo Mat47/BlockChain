@@ -56,7 +56,7 @@ public class MulticastReceiver extends Thread
                             PortSender.respondHandshake(message.getSender().getPort(), node);
                             NetworkInfo.peers.add(message.getSender());
                             // adds address to chain accounts
-                            Controller.worldState.getAccounts().put(message.getSender().getAddress(), 100.);    // adds initial starting balance for demo purposes
+                            Controller.worldState.getBalances().put(message.getSender().getAddress(), 100.);    // adds initial starting balance for demo purposes
                         }
                         break;
 

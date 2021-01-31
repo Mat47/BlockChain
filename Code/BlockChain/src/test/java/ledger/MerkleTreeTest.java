@@ -27,13 +27,13 @@ class MerkleTreeTest
         Wallet wallet = new Wallet(ca.issueCertificate());
         transactions = new ArrayList<>();
 
-        TxProposal txp1 = new TxProposal("hugh", "janus", 75);
+        TxProposal txp1 = new TxProposal("hugh", "janus", Asset.BTC, 75);
         tx1 = new Transaction(txp1, new SigKey(wallet.sign(txp1), wallet.getPub()));
 
-        TxProposal txp2 = new TxProposal("frank", "lis", 50);
+        TxProposal txp2 = new TxProposal("frank", "lis", Asset.BTC, 50);
         tx2 = new Transaction(txp2, new SigKey(wallet.sign(txp2), wallet.getPub()));
 
-        TxProposal txp3 = new TxProposal("baly", "chad", 349.3);
+        TxProposal txp3 = new TxProposal("baly", "chad", Asset.BTC, 348);
         tx3 = new Transaction(txp3, new SigKey(wallet.sign(txp3), wallet.getPub()));
     }
 

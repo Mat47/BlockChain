@@ -15,6 +15,7 @@ import java.security.spec.X509EncodedKeySpec;
 
 /**
  * Validation contract which defines the rules (e.g. enforcing endorsement policy) between organisations in executable code. Apps invoke a smart contract to interact with the blockchain.
+ * Public Key Cryptography Reference: https://docs.oracle.com/javase/tutorial/security/apisign/index.html
  */
 public class SmartContract
 {
@@ -66,7 +67,7 @@ public class SmartContract
 
     public static boolean verifyTxProposal(TxProposal txProp, SigKey sigKey)
     {
-        if (Controller.worldState.getAccounts().get(txProp.getFromAddress()).equals(null))
+        if (Controller.worldState.getBalances().get(txProp.getFromAddress()).equals(null))
         {
             logger.error("Account/Address {} does not exist.", txProp.getFromAddress());
             return false;
