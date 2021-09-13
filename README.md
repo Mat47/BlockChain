@@ -1,5 +1,3 @@
-# 01521804 - Mathias NIEHOFF
-
 051065 LP 2020W: Implementing a Private Blockchain
 
 How to run the program:
